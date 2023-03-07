@@ -1,3 +1,41 @@
+## Bruno's Portfolio
+
+### Packeges
+
+Email contact form
+```
+npm i @emailjs/browser
+```
+Fonts
+```
+npm i @fortawesome/free-brands-svg-icons
+npm i @fortawesome/free-solid-svg-icons
+npm i @fortawesome/react-fontawesome
+```
+CSS Library to Animate Objects and Fonts
+```
+npm i animate.css
+npm i gsap-trial
+```
+Loaders
+```
+npm i loaders.css
+npm i react-loaders
+```
+Maps
+```
+npm i react-leaflet
+```
+Page navigation
+```
+npm i react-router-dom
+```
+Styling
+```
+npm i sass
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
