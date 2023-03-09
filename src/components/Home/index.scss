@@ -9,7 +9,7 @@
   }
 
   h1 {
-    color: #fff;
+    color: #1D1D1D;
     font-size: 56px;
     line-height: 53px;
     margin: 0;
@@ -57,6 +57,30 @@
     font-family: sans-serif;
     letter-spacing: 3px;
     animation: fadeIn 1s 1.8s backwards;
+  }
+
+  .social-media {
+    display: hidden;
+    bottom: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    a {
+      padding: 7px 0;
+      padding-right: 8px;
+      font-size: 20px;
+      line-height: 21px;
+      color: #4d4d4e;
+      animation: fadeIn 1s 1.8s backwards;
+      
+      &:hover {
+        .anchor-icon {
+          color: #3185ce;
+        }
+      }
+    }
+
   }
 
   .flat-button {
