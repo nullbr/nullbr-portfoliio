@@ -1,4 +1,4 @@
-import './index.scss';
+import './index.scss'
 import { useEffect, useState } from 'react'
 import LogoTitle from '../../assets/images/logo-s.png'
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faLinkedin,
     faGithub
-} from '@fortawesome/free-brands-svg-icons'
+} from '@fortawesome/free-brands-svg-icons';
 
 const Home = () => {
     const [letterClass, selectLetterClass] = useState('text-animate')
@@ -27,7 +27,13 @@ const Home = () => {
         'e',
         'r',
         '.',
-      ]
+    ]
+
+    useEffect(() => {
+        return setTimeout(() => {
+            selectLetterClass('text-animate-hover')
+        }, 4000)
+    }, [])
 
     return (
         <div className='container home-page'>
