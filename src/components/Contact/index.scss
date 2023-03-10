@@ -32,30 +32,6 @@
     }
   }
 
-  input[type='text'],
-  input[type='email'] {
-    width: 100%;
-    border: 0;
-    background: #fff;
-    height: 50px;
-    font-size: 16px;
-    color: #4d4d4e;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
-
-  textarea {
-    width: 100%;
-    border: 0;
-    background: #fff;
-    height: 50px;
-    font-size: 16px;
-    color: #4d4d4e;
-    padding: 20px;
-    box-sizing: border-box;
-    min-height: 150px;
-  }
-
   .flat-button {
     color: #3189ce;
     font-size: 11px;

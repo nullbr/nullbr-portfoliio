@@ -34,6 +34,10 @@ Styling
 ```
 npm i sass
 ```
+Using Firebase for storage and Authentication
+```
+npm install firebase
+```
 
 
 # Getting Started with Create React App

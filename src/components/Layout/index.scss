@@ -203,7 +203,8 @@
 
 .container.contact-page,
 .container.about-page,
-.container.portfolio-page {
+.container.portfolio-page,
+.container.dashboard-page {
   
     h1 {
       font-size: 53px;
@@ -277,6 +278,12 @@
   }
 }
 
+.container.dashboard-page {
+  width: 90%;
+  padding: 20px;
+  margin-left: 70px;
+}
+
 @media screen and (max-width: 1200px) {
   .page {
     position: initial;
@@ -289,7 +296,8 @@
 
     &.contact-page,
     &.about-page,
-    &.portfolio-page {
+    &.portfolio-page
+    &.dashboard-page {
       .text-zone {
         position: initial;
         transform: none;
@@ -315,6 +323,13 @@
         max-width: calc(50% - 10px);
       }
     }
+
+    &.dashboard-page {
+      width: 90%;
+      padding: 20px;
+      margin-left: 0px;
+    }
+    
   }
 
   .stage-cube-cont {
@@ -323,4 +338,28 @@
     height: 0%;
     overflow: visible;
   }
+}
+
+input[type='text'],
+input[type='email'] {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  height: 50px;
+  font-size: 16px;
+  color: #4d4d4e;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  height: 50px;
+  font-size: 16px;
+  color: #4d4d4e;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 150px;
 }

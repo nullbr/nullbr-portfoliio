@@ -1,8 +1,7 @@
 import { useRef } from 'react';
 import { auth, storage, db } from '../../firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { addDoc } from 'firebase/firestore';
-import { collection } from 'firebase/firestore/lite';
+import { doc, setDoc } from 'firebase/firestore';
 
 
 const Home = () => {
@@ -49,15 +48,16 @@ const Home = () => {
 
     const savePortfolio = async (portfolio) => {
         try {
-            await addDoc(collection(db, 'portfolio'), portfolio);
+            await setDoc(doc(db, 'portfolio', portfolio.name), portfolio);
             window.location.reload(false);
         } catch (error) {
+            console.log(error);
             alert('Failed to add portfolio');
         }
     }
 
     return (
-        <div className="dashboard">
+        <div className="container dashboard-page">
 
             <form ref={form} onSubmit={submitPortfolio}>
                 <p><input type="text" placeholder="Name" /></p>
