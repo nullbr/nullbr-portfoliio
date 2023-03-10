@@ -36,7 +36,7 @@
   input[type='email'] {
     width: 100%;
     border: 0;
-    background: #115173;
+    background: #fff;
     height: 50px;
     font-size: 16px;
     color: #4d4d4e;
@@ -47,7 +47,7 @@
   textarea {
     width: 100%;
     border: 0;
-    background: #115173;
+    background: #fff;
     height: 50px;
     font-size: 16px;
     color: #4d4d4e;
@@ -70,6 +70,12 @@
     float: right;
     text-align: center;
     margin-right: 10px;
+    animation: fadeInAnimation 1s 1.8s backwards;
+
+    &:hover {
+      background: #3185ce;
+      color: #fff;
+    }
   }
 }
 
@@ -98,7 +104,7 @@
   z-index: 999999;
   width: 267px;
   padding: 20px;
-  color: #4d4d4e;
+  color: #fff;
   font-family: 'Helvetica';
   font-size: 17px;
   font-weight: 300;
