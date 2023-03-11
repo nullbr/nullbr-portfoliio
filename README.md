@@ -1,5 +1,4 @@
-## Bruno's Portfolio
-### Check it out at [bruno.buzz](bruno.buzz)
+## [Bruno's Portfolio](https://bruno.buzz/)
 
 ### Packeges
 
