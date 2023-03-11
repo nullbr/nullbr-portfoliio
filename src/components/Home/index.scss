@@ -82,29 +82,7 @@
     }
 
   }
-
-  .flat-button {
-    color: #0093B9;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    font-family: sans-serif;
-    text-decoration: none;
-    padding: 10px 18px;
-    border: 1px solid #0093B9;
-    margin-top: 25px;
-    float: left;
-    animation: fadeInAnimation 1s 1.8s backwards;
-    white-space: nowrap;
-
-    &:hover {
-      background: #0093B9;
-      color: #fff;
-    }
-  }
 }
-
-
 
 @media screen and (max-width: 1200px) {
   .tags,
@@ -121,7 +99,7 @@
     box-sizing: border-box;
   }
 
-  .home-page .flat-button {
+  .home-page {
     float: none;
     display: block;
     margin: 20px auto 0 auto;

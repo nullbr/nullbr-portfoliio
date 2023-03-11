@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -66,6 +67,11 @@ const About = () => {
             When I am not focused on tech, I enjoy my time learning to play the guitar, 
             practice Brazilian Jiu-Jitsu and work on my motorcycle.
           </p>
+          <Link to="https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_English.pdf?alt=media&token=2a6d4fb2-a421-4896-8abe-71abdd8b1e05" 
+          className="flat-button"
+          target='_blank'>
+            VIEW RESUME
+          </Link>
         </div>
       </div>
       <Loader type="pacman" />

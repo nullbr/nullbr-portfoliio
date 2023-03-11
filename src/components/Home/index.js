@@ -91,6 +91,11 @@ const Home = () => {
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
+          <Link to="https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_English.pdf?alt=media&token=2a6d4fb2-a421-4896-8abe-71abdd8b1e05" 
+          className="flat-button"
+          target='_blank'>
+            VIEW RESUME
+          </Link>
         </div>
         <Logo />
       </div>
