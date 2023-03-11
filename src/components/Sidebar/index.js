@@ -12,8 +12,10 @@ import {
   faSuitcase,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Sidebar = () => {
+  const { t } = useTranslation();
   const [showNav, setShowNav] = useState(false);
 
   return (
@@ -30,6 +32,7 @@ const Sidebar = () => {
           exact="true"
           activeclassname="active"
           to="/"
+          data-value={t('home')}
           onClick={() => setShowNav(false)}>
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
         </NavLink>
@@ -37,6 +40,7 @@ const Sidebar = () => {
           activeclassname="active"
           className="about-link"
           to="/about"
+          data-value='ABOUT'
           onClick={() => setShowNav(false)}>
           <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
         </NavLink>
@@ -45,6 +49,7 @@ const Sidebar = () => {
           className="portfolio-link"
           to="/portfolio"
           onClick={() => setShowNav(false)}
+          data-value={t('portfolio')}
         >
           <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
         </NavLink>
@@ -53,6 +58,7 @@ const Sidebar = () => {
           className="contact-link"
           to="/contact"
           onClick={() => setShowNav(false)}
+          data-value={t('contact')}
         >
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>

@@ -38,6 +38,10 @@ Using Firebase for storage and Authentication
 ```
 npm install firebase
 ```
+Localizers dependencies
+```
+npm install --save react-i18next i18next
+```
 
 
 # Getting Started with Create React App

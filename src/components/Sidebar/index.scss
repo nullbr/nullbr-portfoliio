@@ -1,7 +1,7 @@
 .nav-bar {
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0,0,0,0.640515581232493) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.671327906162465) 100%);
-  width: 60px;
+  width: 65px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -71,29 +71,11 @@
         -webkit-transition: all 0.3s ease-out;
         transition: all 0.3s ease-out;
       }
-
-      &:first-child {
-        &:after {
-          content: 'HOME';
-        }
-      }
     }
 
-    a.about-link {
+    a {
       &:after {
-        content: 'ABOUT';
-      }
-    }
-
-    a.contact-link {
-      &:after {
-        content: 'CONTACT';
-      }
-    }
-
-    a.portfolio-link {
-      &:after {
-        content: 'PORTFOLIO';
+        content: attr(data-value);
       }
     }
 
@@ -157,7 +139,8 @@
       width: 100%;
       top: 0;
       left: 0;
-      background: #181818;
+      background: rgb(0,0,0);
+      background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,0.41082370448179273) 100%);
       height: 100%;
       margin: 0;
       z-index: 2;
