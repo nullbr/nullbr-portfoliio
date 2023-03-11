@@ -33,12 +33,12 @@
   }
 
   .flat-button {
-    color: #3189ce;
+    color: #0093B9;
     font-size: 11px;
     letter-spacing: 3px;
     text-decoration: none;
     padding: 8px 10px;
-    border: 1px solid #3189ce;
+    border: 1px solid #0093B9;
     float: left;
     border-radius: 4px;
     background: 0 0;
@@ -49,7 +49,7 @@
     animation: fadeInAnimation 1s 1.8s backwards;
 
     &:hover {
-      background: #3185ce;
+      background: #0093B9;
       color: #fff;
     }
   }
@@ -92,7 +92,7 @@
     font-size: 16px;
 
     span {
-      color: #3189ce;
+      color: #0093B9;
     }
   }
 }

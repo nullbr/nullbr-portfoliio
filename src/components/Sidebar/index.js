@@ -59,14 +59,14 @@ const Sidebar = () => {
         <FontAwesomeIcon 
           onClick={() => setShowNav(false)}
           icon={faClose}
-          color="#3185ce"
+          color="#0093B9"
           size="3x"
           className='close-icon' />
       </nav>
       <FontAwesomeIcon 
           onClick={() => setShowNav(true)}
           icon={faBars}
-          color="#3185ce"
+          color="#0093B9"
           size="3x"
           className='hamburger-icon' />
     </div>

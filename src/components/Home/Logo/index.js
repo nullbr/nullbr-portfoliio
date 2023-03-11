@@ -1,4 +1,4 @@
-import LogoS from '../../../assets/images/logo-s.png'
+import LogoHome from '../../../assets/images/logo-home.png'
 import './index.scss'
 
 const Logo = () => {
@@ -7,7 +7,7 @@ const Logo = () => {
     <div className="logo-container">
       <img
         className="solid-logo"
-        src={LogoS}
+        src={LogoHome}
         alt="JavaScript,  Developer"
       />
     </div>

@@ -19,7 +19,7 @@
     &:before {
       content: '<h1>';
       font-family: 'La Belle Aurore', cursive;
-      color: #3185ce;
+      color: #0093B9;
       font-size: 18px;
       position: absolute;
       margin-top: -40px;
@@ -30,7 +30,7 @@
     &:after {
       content: '<h1/>';
       font-family: 'La Belle Aurore', cursive;
-      color: #3185ce;
+      color: #0093B9;
       font-size: 18px;
       position: absolute;
       margin-top: 18px;
@@ -76,7 +76,7 @@
       
       &:hover {
         .anchor-icon {
-          color: #3185ce;
+          color: #0093B9;
         }
       }
     }
@@ -84,21 +84,21 @@
   }
 
   .flat-button {
-    color: #3185ce;
+    color: #0093B9;
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 4px;
     font-family: sans-serif;
     text-decoration: none;
     padding: 10px 18px;
-    border: 1px solid #3185ce;
+    border: 1px solid #0093B9;
     margin-top: 25px;
     float: left;
     animation: fadeInAnimation 1s 1.8s backwards;
     white-space: nowrap;
 
     &:hover {
-      background: #3185ce;
+      background: #0093B9;
       color: #fff;
     }
   }
@@ -130,21 +130,10 @@
 
   .logo-container {
     position: relative;
-    width: 100px;
-    height: auto;
     top: 50px;
     right: 0;
     box-sizing: border-box;
     margin: auto;
     left: 0;
-  }
-
-  .logo-container svg {
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: 0;
-    margin: auto;
   }
 }
