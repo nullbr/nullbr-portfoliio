@@ -19,10 +19,11 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const Sidebar = () => {
   const { t } = useTranslation();
+  const { i18n } = useTranslation();
   const [showNav, setShowNav] = useState(false);
 
   function changeLanguage(e) {
-    t.changeLanguage(e.target.value);
+    i18n.changeLanguage(e.target.value);
   }
 
 
@@ -77,10 +78,10 @@ const Sidebar = () => {
           size="3x"
           className='close-icon' />
       </nav>
-      <ul className='social-icons'>
+      <ul className='sidebar-social-icons'>
         <li>
           <a
-            href="https://www.linkedin.com/in/slobodan-gaji%C4%87-006bb8b8/"
+            href="https://www.linkedin.com/in/bruno-mariano-leite/"
             target="_blank"
             rel="noreferrer"
           >
@@ -93,7 +94,7 @@ const Sidebar = () => {
         </li>
         <li>
           <a
-            href="https://github.com/bobangajicsm"
+            href="https://github.com/nullbr"
             target="_blank"
             rel="noreferrer"
           >
@@ -117,6 +118,14 @@ const Sidebar = () => {
           </button>
         </li>
       </ul>
+      <div className='mobile-language'>
+        <button onClick={changeLanguage} value='en'>
+          <US title="English" className="..."/>
+        </button>
+        <button onClick={changeLanguage} value='pt'>
+          <BR title="Portuguese" className="..."/>
+        </button>
+      </div>
       <FontAwesomeIcon 
           onClick={() => setShowNav(true)}
           icon={faBars}

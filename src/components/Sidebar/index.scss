@@ -85,7 +85,7 @@
     }
   }
 
-  ul.social-icons {
+  ul.sidebar-social-icons {
     position: absolute;
     width: 100%;
     display: block;
@@ -111,38 +111,38 @@
       }
     }
   }
-}
-
-ul.language-icons {
-  position: absolute;
-  width: 100%;
-  display: block;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  margin: 0;
-  bottom: 20px;
-
-  li {
-    button {
-      padding: 7px 0;
-      display: block;
-      color: #4d4d4e;
-
-      svg {
-        width: 30px;
-      }
-    }
-
-    &:hover {
-      .anchor-icon {
-        color: #0093B9;
+  ul.language-icons {
+    position: absolute;
+    width: 100%;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    bottom: 20px;
+  
+    li {
+      button {
+        padding: 7px 20px;
+        display: block;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+  
+        svg {
+          width: 100%;
+          pointer-events: none;
+        }
+        &:hover {
+          background-color: #0093B9;
+        }
       }
     }
   }
 }
+
   
-.hamburger-icon, .close-icon {
+.hamburger-icon, .close-icon, .mobile-language {
   display: none;
 }
 
@@ -159,10 +159,10 @@ ul.language-icons {
       visibility: hidden;
     }
 
-    ul, nav {
+    ul.sidebar-social-icons, ul.language-icons, nav {
       display: none;
     }
-
+    
     nav {
       width: 100%;
       top: 0;
@@ -202,6 +202,24 @@ ul.language-icons {
         top: 15px;
         right: 15px;
         display: block;
+    }
+
+    .mobile-language {
+      position: absolute;
+      top: 15px;
+      right: 60px;
+      display: block;
+
+      button {
+        padding: 12px 5px;
+        background: transparent;
+        border: none;
+  
+        svg {
+          width: 20px;
+          pointer-events: none;
+        }
+      }
     }
   }
 }
