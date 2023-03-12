@@ -5,10 +5,12 @@ import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
+import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
+  const { t } = useTranslation()
 
   useEffect(() => {
     return setTimeout(() => {
@@ -35,7 +37,7 @@ const Contact = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+              strArray={t('contact.title').split(',')}
               idx={15}
             />
           </h1>

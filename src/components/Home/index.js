@@ -9,27 +9,19 @@ import {
   faLinkedin,
   faGithub
 } from '@fortawesome/free-brands-svg-icons';
+import { useTranslation } from 'react-i18next';
 import './index.scss'
 
 const Home = () => {
+  const { t } = useTranslation();
+
   const [letterClass, setLetterClass] = useState('text-animate')
 
+  const hiArray = t('home.hi').split(',')
+  const imArray = t('home.im').split(',')
   const nameArray = ['r', 'u', 'n', 'o']
-  const jobArray = [
-    'w',
-    'e',
-    'b',
-    ' ',
-    'd',
-    'e',
-    'v',
-    'e',
-    'l',
-    'o',
-    'p',
-    'e',
-    'r',
-  ]
+  const stackArray = 'F,u,l,l, ,S,t,a,c,k'.split(',')
+  const devArray = 'D,e,v,e,l,o,p,e,r'.split(',')
 
   useEffect(() => {
     return setTimeout(() => {
@@ -42,11 +34,17 @@ const Home = () => {
       <div className="container home-page">
         <div className="text-zone">
           <h1>
-            <span className={letterClass}>H</span>
-            <span className={`${letterClass} _12`}>i,</span>
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={hiArray}
+              idx={11}
+            />
             <br />
-            <span className={`${letterClass} _13`}>I</span>
-            <span className={`${letterClass} _14`}>'m</span>
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={imArray}
+              idx={13}
+            />
             <img
               src={LogoTitle}
               alt="JavaScript Developer Name, Web Developer Name"
@@ -59,11 +57,17 @@ const Home = () => {
             <br />
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={jobArray}
+              strArray={stackArray}
               idx={22}
             />
+            <br />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={devArray}
+              idx={27}
+            />
           </h1>
-          <h2>Full Stack Developer </h2>
+          <h2>{t('home.find_me')} </h2>
           <div className='social-media'>
             <a
               href="https://www.linkedin.com/in/bruno-mariano-leite/"
@@ -90,12 +94,12 @@ const Home = () => {
           </div>
           <div className='buttons'>
             <Link to="/contact" className="flat-button">
-              CONTACT ME
+              {t('home.contact_me')}
             </Link>
-            <Link to="https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_English.pdf?alt=media&token=2a6d4fb2-a421-4896-8abe-71abdd8b1e05" 
+            <Link to={t('home.resume_url')}
             className="flat-button"
             target='_blank'>
-              VIEW RESUME
+              {t('home.resume')}
             </Link>
           </div>
         </div>

@@ -1,6 +1,15 @@
 {
-  "home": "HOME",
-  "portfolio": "PORTIÓLIO",
-  "contact": "CONTATO",
-  "about": "SOBRE"
+  "sidebar.home": "HOME",
+  "sidebar.portfolio": "PORTIÓLIO",
+  "sidebar.contact": "CONTATO",
+  "sidebar.about": "SOBRE",
+  "home.hi": "O,l,á",
+  "home.im": "s,o,u",
+  "home.find_me": "Me encontre",
+  "home.resume": "CURRÍCULO",
+  "home.resume_url": "https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_English.pdf?alt=media&token=2a6d4fb2-a421-4896-8abe-71abdd8b1e05",
+  "home.contact_me": "CONTATO",
+  "about.title": "S,o,b,r,e",
+  "portfolio.title": "P,o,r,t,f,ó,l,i,o",
+  "contact.title": "C,o,n,t,a,t,o"
 }

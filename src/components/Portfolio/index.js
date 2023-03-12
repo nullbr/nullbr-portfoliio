@@ -4,10 +4,12 @@ import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss";
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../firebase';
+import { useTranslation } from "react-i18next";
 
 const Portfolio = () => { 
     const [letterClass, setLetterClass] = useState('text-animate');
     const [portfolio, setPortfolio] = useState([]);
+    const { t } = useTranslation()
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -70,7 +72,7 @@ const Portfolio = () => {
                 <h1 className="page-title">
                     <AnimatedLetters
                         letterClass={letterClass}
-                        strArray={"Portfolio".split("")}
+                        strArray={t('portfolio.title').split(",")}
                         idx={15}
                     />
                 </h1>

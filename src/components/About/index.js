@@ -3,8 +3,11 @@ import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation()
+
   const [letterClass, setLetterClass] = useState('text-animate')
 
   useEffect(() => {
@@ -43,7 +46,7 @@ const About = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
+              strArray={t('about.title').split(',')}
               idx={15}
             />
           </h1>
