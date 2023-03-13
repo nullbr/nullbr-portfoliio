@@ -3,13 +3,13 @@
   "sidebar.portfolio": "PORTIOLIO",
   "sidebar.contact": "CONTAT",
   "sidebar.about": "ABOUT",
-  "home.hi": "H,i",
-  "home.im": "I',m",
+  "home.hi": "Hi",
+  "home.im": "I'm",
   "home.find_me": "Find me",
   "home.resume": "VIEW RESUME",
   "home.resume_url": "https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_English.pdf?alt=media&token=2a6d4fb2-a421-4896-8abe-71abdd8b1e05",
   "home.contact_me": "CONTACT ME",
-  "about.title": "A,b,o,u,t",
-  "portfolio.title": "P,o,r,t,f,o,l,i,o",
-  "contact.title": "C,o,n,t,a,c,t"
+  "about.title": "About",
+  "portfolio.title": "Portfolio",
+  "contact.title": "Contact"
 }

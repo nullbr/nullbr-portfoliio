@@ -21,10 +21,15 @@
 
 @media screen and (max-width: 1200px) {
   .logo-container {
-    width: 90% !important;
+    width: 80% !important;
     height: auto;
     float: none;
     display: block;
     margin: 0 auto 0 auto;
+    position: relative;
+    top: 20px;
+    right: 0;
+    box-sizing: border-box;
+    left: 0;
   }
 }

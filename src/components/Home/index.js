@@ -17,16 +17,18 @@ const Home = () => {
 
   const [letterClass, setLetterClass] = useState('text-animate')
 
-  const hiArray = t('home.hi').split(',')
-  const imArray = t('home.im').split(',')
-  const nameArray = ['r', 'u', 'n', 'o']
-  const stackArray = 'F,u,l,l, ,S,t,a,c,k'.split(',')
-  const devArray = 'D,e,v,e,l,o,p,e,r'.split(',')
+  const hiArray = t('home.hi').split('')
+  const imArray = t('home.im').split('')
+  const nameArray = ['r', 'u', 'n', 'o', ',']
+  const stackArray = 'Full Stack '.split('')
+  const devArray = 'Developer'.split('')
 
   useEffect(() => {
-    return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 4000)
+    let timer = setTimeout(() => { setLetterClass('text-animate-hover') }, 4000);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [])
 
   return (
@@ -60,7 +62,7 @@ const Home = () => {
               strArray={stackArray}
               idx={22}
             />
-            <br />
+            <br className='mobile-break' />
             <AnimatedLetters
               letterClass={letterClass}
               strArray={devArray}

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import LogoB from '../../assets/images/logo-s.png'
 import LogoSubtitle from '../../assets/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import US from 'country-flag-icons/react/3x2/US'
+import GB from 'country-flag-icons/react/3x2/GB'
 import BR from 'country-flag-icons/react/3x2/BR'
 import {
   faHome,
@@ -43,7 +43,7 @@ const Sidebar = () => {
           to="/"
           data-value={t('sidebar.home')}
           onClick={() => setShowNav(false)}>
-          <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faHome} color="#E9F1FA" />
         </NavLink>
         <NavLink 
           activeclassname="active"
@@ -51,7 +51,7 @@ const Sidebar = () => {
           to="/about"
           data-value={t('sidebar.about')}
           onClick={() => setShowNav(false)}>
-          <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faUser} color="#E9F1FA" />
         </NavLink>
         <NavLink
           activeclassname="active"
@@ -60,7 +60,7 @@ const Sidebar = () => {
           onClick={() => setShowNav(false)}
           data-value={t('sidebar.portfolio')}
         >
-          <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faSuitcase} color="#E9F1FA" />
         </NavLink>
         <NavLink
           activeclassname="active"
@@ -69,7 +69,7 @@ const Sidebar = () => {
           onClick={() => setShowNav(false)}
           data-value={t('sidebar.contact')}
         >
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faEnvelope} color="#E9F1FA" />
         </NavLink>
         <FontAwesomeIcon 
           onClick={() => setShowNav(false)}
@@ -87,7 +87,7 @@ const Sidebar = () => {
           >
             <FontAwesomeIcon
               icon={faLinkedin}
-              color="#4d4d4e"
+              color="#E9F1FA"
               className="anchor-icon"
             />
           </a>
@@ -100,7 +100,7 @@ const Sidebar = () => {
           >
             <FontAwesomeIcon
               icon={faGithub}
-              color="#4d4d4e"
+              color="#E9F1FA"
               className="anchor-icon"
             />
           </a>
@@ -109,7 +109,7 @@ const Sidebar = () => {
       <ul className='language-icons'>
         <li>
           <button onClick={changeLanguage} value='en'>
-            <US title="English" className="..."/>
+            <GB title="English" className="..."/>
           </button>
         </li>
         <li>
@@ -120,7 +120,7 @@ const Sidebar = () => {
       </ul>
       <div className='mobile-language'>
         <button onClick={changeLanguage} value='en'>
-          <US title="English" className="..."/>
+          <GB title="English" className="..."/>
         </button>
         <button onClick={changeLanguage} value='pt'>
           <BR title="Portuguese" className="..."/>

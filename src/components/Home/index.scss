@@ -60,7 +60,6 @@
   }
 
   .social-media {
-    display: hidden;
     bottom: 20px;
     width: 100%;
     padding: 0;
@@ -81,6 +80,10 @@
       }
     }
 
+  }
+
+  .mobile-break {
+    display: none;
   }
 }
 
@@ -106,17 +109,13 @@
     width: 124px;
   }
 
-  .logo-container {
-    position: relative;
-    top: 50px;
-    right: 0;
-    box-sizing: border-box;
-    margin: auto;
-    left: 0;
-  }
-
   .buttons {
     display: flex;
-    margin: 0 !important;
+    // margin: 0 !important;
+  }
+
+  .mobile-break {
+    display: inline !important;
+    // position: absolute;
   }
 }
