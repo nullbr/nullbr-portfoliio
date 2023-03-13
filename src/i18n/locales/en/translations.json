@@ -20,5 +20,7 @@
   "contact.name": "Name",
   "contact.email": "Email",
   "contact.subject": "Subject",
-  "contact.message": "Message"
+  "contact.message": "Message",
+  "contact.button": "Send",
+  "contact.brazil": "Brazil"
 }

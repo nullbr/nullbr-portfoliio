@@ -74,7 +74,7 @@ const Contact = () => {
                   ></textarea>
                 </li>
                 <li>
-                  <input type="submit" className="flat-button" value="SEND" />
+                  <input type="submit" className="flat-button" value={t("contact.button")} />
                 </li>
               </ul>
             </form>
@@ -83,7 +83,7 @@ const Contact = () => {
         <div className="info-map">
           São Paulo,
           <br />
-          Brazil
+          {t("contact.brazil")}
           <br />
           <span>bmarianoleite3@gmail.com</span>
         </div>
