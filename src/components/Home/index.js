@@ -101,7 +101,7 @@ const Home = () => {
             <Link to={t('home.resume_url')}
             className="flat-button"
             target='_blank'>
-              {t('home.resume')}
+              {t("defaults.resume-button")}
             </Link>
           </div>
         </div>

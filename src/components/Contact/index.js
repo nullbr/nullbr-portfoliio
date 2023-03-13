@@ -37,24 +37,22 @@ const Contact = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={t('contact.title').split(',')}
+              strArray={t('contact.title').split("")}
               idx={15}
             />
           </h1>
           <p>
-            I am interested in freelance opportunities - especially on ambitious
-            or large projects. However, if you have any other requests or
-            questions, don't hesitate to contact me using below form either.
+            {t("contact.paragraph")}
           </p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
               <ul>
                 <li className="half">
-                  <input placeholder="Name" type="text" name="name" required />
+                  <input placeholder={t("contact.name")} type="text" name="name" required />
                 </li>
                 <li className="half">
                   <input
-                    placeholder="Email"
+                    placeholder={t("contact.email")}
                     type="email"
                     name="email"
                     required
@@ -62,7 +60,7 @@ const Contact = () => {
                 </li>
                 <li>
                   <input
-                    placeholder="Subject"
+                    placeholder={t("contact.subject")}
                     type="text"
                     name="subject"
                     required
@@ -70,7 +68,7 @@ const Contact = () => {
                 </li>
                 <li>
                   <textarea
-                    placeholder="Message"
+                    placeholder={t("contact.message")}
                     name="message"
                     required
                   ></textarea>

@@ -23,34 +23,23 @@ const About = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={t('about.title').split(',')}
+              strArray={t('about.title').split("")}
               idx={15}
             />
           </h1>
           <p>
-            I am a hard-working and capable developer that 
-            has always been passionate about technology 
-            and taking on challenging and diverse projects. 
-          </p>
-          <p align="LEFT">
-            As a Full Stack Developer, I had the opportunity to plan, 
-            desig and implement features web applications and APIs. 
-            My main tech stack is: Ruby on Rails, HTML, SCSS, jQuery, ReactJS, PostgreSQL, among others. 
-            Also, I have integrated these systems with third party APIs such as 
-            Twilio, Stripe, Sidekiq, Sentry and Sendinblue. 
-            In all of my projects I seek to apply valuable leadership skills 
-            while making productivity and delivery time top priorities. 
-            Furthermore, as a Computer Science student, I strive to develop my theoretical and practical 
-            skills to stay relevant in this fast growing sector.
+            {t('about.paragraph1')}
           </p>
           <p>
-            When I am not focused on tech, I enjoy my time learning to play the guitar, 
-            practice Brazilian Jiu-Jitsu and work on my motorcycle.
+            {t('about.paragraph2')}
+          </p>
+          <p>
+            {t('about.paragraph3')}
           </p>
           <Link to="https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_English.pdf?alt=media&token=2a6d4fb2-a421-4896-8abe-71abdd8b1e05" 
           className="flat-button"
           target='_blank'>
-            VIEW RESUME
+            {t("defaults.resume-button")}
           </Link>
         </div>
 

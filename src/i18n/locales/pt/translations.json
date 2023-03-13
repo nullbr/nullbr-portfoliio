@@ -1,4 +1,5 @@
 {
+  "defaults.resume-button": "CURRÍCULO",
   "sidebar.home": "HOME",
   "sidebar.portfolio": "PORTIFÓLIO",
   "sidebar.contact": "CONTATO",
@@ -6,11 +7,18 @@
   "home.hi": "Olá",
   "home.im": "sou",
   "home.find_me": "Me encontre",
-  "home.resume": "CURRÍCULO",
   "home.resume_url": "https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_Portuguese.pdf?alt=media&token=3aa4814e-451a-4a88-8ab1-3d71d418e55b",
   "home.contact_me": "CONTATO",
   "about.title": "Sobre",
+  "about.paragraph1": "Sou um desenvolvedor empenhado e capaz, sempre fui apaixonado por tecnologia e gosto de participar projetos desafiadores e diversificados.",
+  "about.paragraph2": "Como Desenvolvedor Full Stack, tive a oportunidade de planejar, projetar e implementar recursos para aplicações web e APIs. Meu principal stack tecnológico é: Ruby on Rails, HTML, CSS, JavaScript, ReactJS, PostgreSQL, entre outros. Além disso, integrei sistemas com APIs de terceiros, como Twilio, Stripe, Sidekiq, Sentry e Sendinblue. Em todos os meus projetos, procuro aplicar valiosas habilidades de liderança, priorizando ao mesmo tempo a produtividade e o tempo de entrega. Além disso, como estudante de Ciência da Computação, me esforço para desenvolver minhas habilidades teóricas e práticas para me manter relevante neste setor em rápido crescimento.",
+  "about.paragraph3": "Quando não estou focado em tecnologia, aproveito meu tempo tocando violão, praticando Jiu-Jitsu e trabalhando na minha moto.",
   "portfolio.title": "Portifólio",
   "portfolio.paragraph": "Confira alguns dos meus últimos projetos. Os repositórios podem ser vistos no github e você pode brincar com alguns dos jogos que escrevi no Replit.",
-  "contact.title": "Contato"
+  "contact.title": "Contato",
+  "contact.paragraph": "Estou interessado em oportunidades de trabalho fixo e freelance - especialmente em projetos ambiciosos. No entanto, se você tiver outras solicitações ou perguntas, não hesite em entrar em contato comigo utilizando o formulário abaixo ou pelo LinkedIn.",
+  "contact.name": "Nome",
+  "contact.email": "Email",
+  "contact.subject": "Assunto",
+  "contact.message": "Mensagem"
 }

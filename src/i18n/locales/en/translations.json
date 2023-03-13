@@ -1,4 +1,5 @@
 {
+  "defaults.resume-button": "VIEW RESUME",
   "sidebar.home": "HOME",
   "sidebar.portfolio": "PORTIOLIO",
   "sidebar.contact": "CONTAT",
@@ -6,11 +7,18 @@
   "home.hi": "Hi",
   "home.im": "I'm",
   "home.find_me": "Find me",
-  "home.resume": "VIEW RESUME",
   "home.resume_url": "https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_English.pdf?alt=media&token=2a6d4fb2-a421-4896-8abe-71abdd8b1e05",
   "home.contact_me": "CONTACT ME",
   "about.title": "About",
+  "about.paragraph1": "I am a hard-working and capable developer that has always been passionate about technology and taking on challenging and diverse projects.",
+  "about.paragraph2": "As a Full Stack Developer, I had the opportunity to plan, desig and implement features web applications and APIs. My main tech stack is: Ruby on Rails, HTML, CSS, JavaScript, ReactJS, PostgreSQL, among others. Also, I have integrated these systems with third party APIs such as Twilio, Stripe, Sidekiq, Sentry and Sendinblue. In all of my projects I seek to apply valuable leadership skills while making productivity and delivery time top priorities. Furthermore, as a Computer Science student, I strive to develop my theoretical and practical skills to stay relevant in this fast growing sector.",
+  "about.paragraph3": "When I am not focused on tech, I enjoy my time learning to play the guitar, practice Brazilian Jiu-Jitsu and work on my motorcycle.",
   "portfolio.title": "Portfolio",
   "portfolio.paragraph": "Check out some of my latest projects.  The repositories can be seen at github and you can play around with some of the games that I have written at Replit.",
-  "contact.title": "Contact"
+  "contact.title": "Contact",
+  "contact.paragraph": "I am interested in full-time or freelance opportunities - especially on ambitious or large projects. However, if you have any other requests or questions, don't hesitate to contact me using below form of over at LinkedIn.",
+  "contact.name": "Name",
+  "contact.email": "Email",
+  "contact.subject": "Subject",
+  "contact.message": "Message"
 }
