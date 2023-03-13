@@ -19,29 +19,6 @@ const About = () => {
   return (
     <>
       <div className="container about-page">
-        <div className="stage-cube-cont">
-          <div className="cubespinner">
-            <div className="face1">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" alt="rails" />
-            </div>
-            <div className="face2">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt='postgres' />
-            </div>
-            <div className="face3">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt='react' />
-            </div>
-            <div className="face4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt='html5' />
-            </div>
-            <div className="face5">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"  alt='postgres' />
-            </div>
-            <div className="face6">
-            <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt='git' />
-            </div>
-          </div>
-        </div>
-        
         <div className="text-zone">
           <h1>
             <AnimatedLetters
@@ -75,6 +52,29 @@ const About = () => {
           target='_blank'>
             VIEW RESUME
           </Link>
+        </div>
+
+        <div className="stage-cube-cont">
+          <div className="cubespinner">
+            <div className="face1">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" alt="rails" />
+            </div>
+            <div className="face2">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt='postgres' />
+            </div>
+            <div className="face3">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt='react' />
+            </div>
+            <div className="face4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt='html5' />
+            </div>
+            <div className="face5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"  alt='postgres' />
+            </div>
+            <div className="face6">
+            <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt='git' />
+            </div>
+          </div>
         </div>
       </div>
       <Loader type="pacman" />

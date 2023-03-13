@@ -9,7 +9,8 @@ import { useTranslation } from "react-i18next";
 const Portfolio = () => { 
     const [letterClass, setLetterClass] = useState('text-animate');
     const [portfolio, setPortfolio] = useState([]);
-    const { t } = useTranslation()
+    const { t } = useTranslation();
+    const { i18n } = useTranslation();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -35,6 +36,8 @@ const Portfolio = () => {
             <div className="images-container">
                 {
                     portfolio.map((port, idx) => {
+                        let description = i18n.language === 'en' ? port.description_en : port.description_pt 
+
                         return (
                             <a
                                 className="image-box"
@@ -50,7 +53,7 @@ const Portfolio = () => {
                                     alt="portfolio" />
                                     <div className="content">
                                         <p className="title">{port.name}</p>
-                                        <h4 className="description">{port.description}</h4>
+                                        <h4 className="description">{description}</h4>
                                         <button
                                             className="btn"
                                             onClick={() => window.open(port.url)}
@@ -76,6 +79,10 @@ const Portfolio = () => {
                         idx={15}
                     />
                 </h1>
+                <p>
+                    {t('portfolio.paragraph')}
+                </p>
+                <br />
                 <div>{renderPortfolio(portfolio)}</div>
             </div>
             <Loader type="pacman" />

@@ -7,9 +7,10 @@
   "home.im": "sou",
   "home.find_me": "Me encontre",
   "home.resume": "CURRÍCULO",
-  "home.resume_url": "https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_English.pdf?alt=media&token=2a6d4fb2-a421-4896-8abe-71abdd8b1e05",
+  "home.resume_url": "https://firebasestorage.googleapis.com/v0/b/nullbr-portfolio.appspot.com/o/resume%2FResume_Portuguese.pdf?alt=media&token=3aa4814e-451a-4a88-8ab1-3d71d418e55b",
   "home.contact_me": "CONTATO",
   "about.title": "Sobre",
-  "portfolio.title": "Portfólio",
+  "portfolio.title": "Portifólio",
+  "portfolio.paragraph": "Confira alguns dos meus últimos projetos. Os repositórios podem ser vistos no github e você pode brincar com alguns dos jogos que escrevi no Replit.",
   "contact.title": "Contato"
 }

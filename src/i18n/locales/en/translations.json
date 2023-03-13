@@ -11,5 +11,6 @@
   "home.contact_me": "CONTACT ME",
   "about.title": "About",
   "portfolio.title": "Portfolio",
+  "portfolio.paragraph": "Check out some of my latest projects.  The repositories can be seen at github and you can play around with some of the games that I have written at Replit.",
   "contact.title": "Contact"
 }

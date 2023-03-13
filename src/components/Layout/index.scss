@@ -187,14 +187,6 @@
         }
       }
     }
-  
-    .stage-cube-cont {
-      position: initial;
-      width: 100%;
-      height: 0%;
-      overflow: visible;
-      visibility: hidden;
-    }
   }
   transform-style: preserve-3d;
   animation: fadeIn 1s forwards;
@@ -320,6 +312,9 @@
     &.about-page,
     &.portfolio-page
     &.dashboard-page {
+      padding: 20px;
+      box-sizing: border-box;
+
       .text-zone {
         position: initial;
         transform: none;
@@ -327,22 +322,6 @@
         display: block;
         padding: 20px;
         box-sizing: border-box;
-      }
-    }
-
-    &.portfolio-page {
-      width: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-
-      h1.page-title {
-        margin-left: 20px;
-        margin-top: 20px;
-      }
-
-      .image-box {
-        height: 200px;
-        max-width: calc(50% - 10px);
       }
     }
 
@@ -354,18 +333,10 @@
     
   }
 
-  .stage-cube-cont {
-    position: initial;
-    width: 100%;
-    height: 0%;
-    overflow: visible;
-  }
-
   .flat-button {
     float: none;
     display: block;
     margin: 0;
-    width: 124px;
     margin-top: 20px;
   }
 }
