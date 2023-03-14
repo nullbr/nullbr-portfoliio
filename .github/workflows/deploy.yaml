@@ -22,5 +22,5 @@ jobs:
       - name: build application
         run: npm run build
 
-      # - name: deploying to ubuntu server
-      #   run: sshpass -p "843297" scp -r ./build/* nullbr@143.198.160.214:/var/www/bruno.buzz/html
+      - name: deploying to ubuntu server
+        run: sshpass -p "${{ secrets.PROD_UBUNTU_PASSWORD }}" scp -r ./build/* ${{ secrets.PROD_UBUNTU_USERNAME }}@${{ secrets.PROD_UBUNTU_IP }}:/var/www/bruno.buzz/html
