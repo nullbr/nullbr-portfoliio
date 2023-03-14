@@ -11,19 +11,13 @@ jobs:
       - name: pulling git repository
         uses: actions/checkout@v3
 
-      # - uses: c-hive/gha-npm-cache@v1
+      - uses: c-hive/gha-npm-cache@v1
 
-      # - name: Install JS dependencies
-      #   run: npm install
-
-      # - name: build application
-      #   run: npm run build
+      - name: Install JS dependencies
+        run: npm install
 
       - name: build application
-        run: |
-          mkdir test
-          touch test/test.txt
-
+        run: npm run build
 
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
@@ -31,5 +25,5 @@ jobs:
           host: ${{ secrets.PROD_UBUNTU_IP }}
           username: ${{ secrets.PROD_UBUNTU_USERNAME }}
           password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
-          source: "./test/test.txt"
-          target: "."
+          source: "./build/*"
+          target: "/var/www/bruno.buzz/html"
