@@ -1,4 +1,4 @@
-name: CI - DigitalOcean Ubuntu
+name: CD - DigitalOcean Ubuntu
 
 on: [push]
 
@@ -13,24 +13,23 @@ jobs:
 
       - uses: c-hive/gha-npm-cache@v1
 
-      - name: Install JS dependencies
-        run: npm install
+      # - name: Install JS dependencies
+      #   run: npm install
 
-      - name: Install sshpass
-        run: sudo apt install sshpass
-
-      - name: build application
-        run: npm run build
+      # - name: build application
+      #   run: npm run build
 
       - name: build application
-        run: ls -a
+        run: |
+          mkdir test
+          touch test/test.txt
 
 
-      # - name: copy file via ssh password
-      #   uses: appleboy/scp-action@master
-      #   with:
-      #     host: ${{ secrets.PROD_UBUNTU_IP }}
-      #     username: ${{ secrets.PROD_UBUNTU_USERNAME }}
-      #     password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
-      #     source: "./build/*"
-      #     target: "/var/www/bruno.buzz/html"
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.PROD_UBUNTU_IP }}
+          username: ${{ secrets.PROD_UBUNTU_USERNAME }}
+          password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
+          source: ".test/test.txt"
+          target: "."
