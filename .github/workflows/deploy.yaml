@@ -4,14 +4,9 @@ on: [push]
 
 jobs:
   deploy:
-    needs: [build]
     runs-on: ubuntu-latest
     environment:
       name: Production
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
     steps:
       - name: pulling git repository
         uses: actions/checkout@v3
