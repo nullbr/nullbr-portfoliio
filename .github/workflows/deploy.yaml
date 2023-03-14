@@ -1,0 +1,34 @@
+name: CI - DigitalOcean Ubuntu
+
+on: [push]
+
+jobs:
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pulling git repository
+        uses: actions/checkout@v3
+
+      - uses: c-hive/gha-npm-cache@v1
+
+      - name: Install JS dependencies
+        run: npm install
+
+      - name: Install sshpass
+        run: sudo apt install sshpass
+    
+    
+    # steps:
+    #   - name: pulling git repository
+    #     uses: actions/checkout@v3
+    #   - name: Install sshpass
+    #     run: sudo apt install sshpass
+    #   - name: deploying to ubuntu server
+    #     run: sshpass -p "843297" scp -r ./build/* nullbr@143.198.160.214:/var/www/bruno.buzz/html
