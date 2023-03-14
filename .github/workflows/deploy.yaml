@@ -22,11 +22,15 @@ jobs:
       - name: build application
         run: npm run build
 
-      - name: copy file via ssh password
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.PROD_UBUNTU_IP }}
-          username: ${{ secrets.PROD_UBUNTU_USERNAME }}
-          password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
-          source: "./build/*"
-          target: "/var/www/bruno.buzz/html"
+      - name: build application
+        run: ls -a
+
+
+      # - name: copy file via ssh password
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: ${{ secrets.PROD_UBUNTU_IP }}
+      #     username: ${{ secrets.PROD_UBUNTU_USERNAME }}
+      #     password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
+      #     source: "./build/*"
+      #     target: "/var/www/bruno.buzz/html"
