@@ -62,6 +62,7 @@ const Home = () => {
 
     return (
         <div className="container dashboard-page">
+            <p>Testing CI</p>
 
             <form ref={form} onSubmit={submitPortfolio}>
                 <p><input type="text" placeholder="Name" /></p>

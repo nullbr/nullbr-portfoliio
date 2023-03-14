@@ -30,9 +30,3 @@ jobs:
           password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
           source: "./build/*"
           target: "/var/www/bruno.buzz/html"
-
-      # - name: set authorization
-      #   run: ssh -o StrictHostKeyChecking=no ${{ secrets.PROD_UBUNTU_USERNAME }}@${{ secrets.PROD_UBUNTU_IP }} uptime
-
-      # - name: deploying to ubuntu server
-      #   run: sshpass -p "${{ secrets.PROD_UBUNTU_PASSWORD }}" scp -r ./build/* ${{ secrets.PROD_UBUNTU_USERNAME }}@${{ secrets.PROD_UBUNTU_IP }}:/var/www/bruno.buzz/html
