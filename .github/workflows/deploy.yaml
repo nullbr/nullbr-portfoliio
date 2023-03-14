@@ -11,7 +11,7 @@ jobs:
       - name: pulling git repository
         uses: actions/checkout@v3
 
-      - uses: c-hive/gha-npm-cache@v1
+      # - uses: c-hive/gha-npm-cache@v1
 
       # - name: Install JS dependencies
       #   run: npm install
@@ -31,5 +31,5 @@ jobs:
           host: ${{ secrets.PROD_UBUNTU_IP }}
           username: ${{ secrets.PROD_UBUNTU_USERNAME }}
           password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
-          source: ".test/test.txt"
+          source: "./test/test.txt"
           target: "."
