@@ -25,5 +25,5 @@ jobs:
           host: ${{ secrets.PROD_UBUNTU_IP }}
           username: ${{ secrets.PROD_UBUNTU_USERNAME }}
           password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
-          source: "./build/*"
+          source: "./build/"
           target: "/var/www/bruno.buzz/html"
