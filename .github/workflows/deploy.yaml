@@ -17,7 +17,9 @@ jobs:
         run: npm install
 
       - name: build application
-        run: npm run build
+        run: |
+          npm run build
+          mv build html
 
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
@@ -25,5 +27,5 @@ jobs:
           host: ${{ secrets.PROD_UBUNTU_IP }}
           username: ${{ secrets.PROD_UBUNTU_USERNAME }}
           password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
-          source: "./build/"
-          target: "/var/www/bruno.buzz/html"
+          source: "./html/"
+          target: "/var/www/bruno.buzz/"
