@@ -100,6 +100,7 @@
     transform: none;
     padding: 10px;
     box-sizing: border-box;
+    text-align: center;
   }
 
   .home-page {
@@ -111,7 +112,16 @@
 
   .buttons {
     display: flex;
+    align-items: center;
+    width: calc(100% - 30px);
+    padding: 0 15px;
+
+    .resume-btn,
+    .contact-btn {
+      width: 50%;
+    }
   }
+
 
   .mobile-break {
     display: inline !important;

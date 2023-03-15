@@ -95,14 +95,18 @@ const Home = () => {
             </a>
           </div>
           <div className='buttons'>
-            <Link to="/contact" className="flat-button">
-              {t('home.contact_me')}
-            </Link>
-            <Link to={t('home.resume_url')}
-            className="flat-button"
-            target='_blank'>
-              {t("defaults.resume-button")}
-            </Link>
+            <div className='contact-btn'>
+              <Link to="/contact" className="flat-button">
+                {t('home.contact_me')}
+              </Link>
+            </div>
+            <div className='resume-btn'>
+              <Link to={t('home.resume_url')}
+              className="flat-button"
+              target='_blank'>
+                {t("defaults.resume-button")}
+              </Link>
+            </div>
           </div>
         </div>
         <Logo />
