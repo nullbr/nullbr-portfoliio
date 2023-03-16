@@ -142,7 +142,8 @@
 }
 
   
-.hamburger-icon, .close-icon, .mobile-language {
+.hamburger-icon, .close-icon,
+.mobile-language, #nav-blank {
   display: none;
 }
 
@@ -291,8 +292,9 @@
         opacity: 1 !important;
       }
 
-      #home {
-        margin-top: calc(100vh - 275px);
+      #nav-blank {
+        height: calc(100% - 270px);
+        // margin-top: calc(100vh - 275px);
       }
     }
 

@@ -49,6 +49,12 @@ const Sidebar = () => {
           return ('')
         }
       })()}>
+        <div
+          id='nav-blank'
+          onClick={() => {
+            setNavFadeOut(true);
+            setShowNav(false)
+          }}></div>
         <NavLink
           id='home'
           exact="true"
