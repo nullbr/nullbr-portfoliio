@@ -232,7 +232,6 @@
     top: auto;
     bottom: 0;
     z-index: 5;
-    
 
     .logo {
       display: flex;
@@ -259,6 +258,11 @@
       z-index: 2;
       position: fixed;
 
+      .close-icon {
+        display: block;
+        padding-top: 15px;
+        padding-left: calc(100% - 35px);
+      }
       
       &.mobile-show {
         display: block;
@@ -288,16 +292,15 @@
       }
 
       #home {
-        margin-top: calc(100vh - 270px);
+        margin-top: calc(100vh - 275px);
       }
     }
 
-    .hamburger-icon,
-    .close-icon {
-        position: absolute;
-        bottom: 15px;
-        right: 15px;
-        display: block;
+    .hamburger-icon {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      display: block;
     }
 
     .mobile-language {
