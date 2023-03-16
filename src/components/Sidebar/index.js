@@ -21,6 +21,7 @@ const Sidebar = () => {
   const { t } = useTranslation();
   const { i18n } = useTranslation();
   const [showNav, setShowNav] = useState(false);
+  const [navFadeOut, setNavFadeOut] = useState(false);
 
   function changeLanguage(e) {
     i18n.changeLanguage(e.target.value);
@@ -32,17 +33,32 @@ const Sidebar = () => {
       <Link 
         className="logo"
         to="/"
-        onClick={() => setShowNav(false)}>
+        onClick={() => {
+            setNavFadeOut(true);
+            setShowNav(false)
+          }}>
         <img src={LogoB} alt="Logo" />
         <img className="sub-logo" src={LogoSubtitle} alt="slobodan" />
       </Link>
-      <nav className={showNav ? 'mobile-show' : ''}>
-      <NavLink 
+      <nav className={(() => {
+        if (showNav) {
+          return ('mobile-show animated animatedFadeInUp fadeInUp')
+        } else if (navFadeOut) {
+          return ('mobile-show animated fadeOutDown')
+        } else {
+          return ('')
+        }
+      })()}>
+        <NavLink
+          id='home'
           exact="true"
           activeclassname="active"
           to="/"
           data-value={t('sidebar.home')}
-          onClick={() => setShowNav(false)}>
+          onClick={() => {
+            setNavFadeOut(true);
+            setShowNav(false)
+          }}>
           <FontAwesomeIcon icon={faHome} color="#E9F1FA" />
         </NavLink>
         <NavLink 
@@ -50,14 +66,20 @@ const Sidebar = () => {
           className="about-link"
           to="/about"
           data-value={t('sidebar.about')}
-          onClick={() => setShowNav(false)}>
+          onClick={() => {
+            setNavFadeOut(true);
+            setShowNav(false)
+          }}>
           <FontAwesomeIcon icon={faUser} color="#E9F1FA" />
         </NavLink>
         <NavLink
           activeclassname="active"
           className="portfolio-link"
           to="/portfolio"
-          onClick={() => setShowNav(false)}
+          onClick={() => {
+            setNavFadeOut(true);
+            setShowNav(false)
+          }}
           data-value={t('sidebar.portfolio')}
         >
           <FontAwesomeIcon icon={faSuitcase} color="#E9F1FA" />
@@ -66,13 +88,19 @@ const Sidebar = () => {
           activeclassname="active"
           className="contact-link"
           to="/contact"
-          onClick={() => setShowNav(false)}
+          onClick={() => {
+            setNavFadeOut(true);
+            setShowNav(false)
+          }}
           data-value={t('sidebar.contact')}
         >
           <FontAwesomeIcon icon={faEnvelope} color="#E9F1FA" />
         </NavLink>
         <FontAwesomeIcon 
-          onClick={() => setShowNav(false)}
+          onClick={() => {
+            setNavFadeOut(true);
+            setShowNav(false)
+          }}
           icon={faClose}
           color="#0093B9"
           size="3x"

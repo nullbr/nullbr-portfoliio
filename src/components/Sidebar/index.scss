@@ -148,15 +148,99 @@
 
 
 @media screen and (max-width: 1200px) {
+  /* Animation */
+  
+  /* fade in up */
+
+  @keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+
+  @-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+
+  .animatedFadeInUp {
+    opacity: 0
+  }
+
+  .fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+  }
+
+  /* fadeOutDown */ 
+
+  @-webkit-keyframes fadeOutDown {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+    }
+  }
+ 
+  @keyframes fadeOutDown {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+  }
+ 
+  .fadeOutDown {
+    -webkit-animation-name: fadeOutDown;
+    animation-name: fadeOutDown;
+  }
+
+  .animated {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-fill-mode: both
+  }
+
+  /* Mobile navbar */ 
+
   .nav-bar { 
-    background: transparent;
-    position: initial;
+    // background: transparent;
+    width: 100%;
+    position: fixed;
     height: auto;
     min-height: auto;
+    display: flex;
+    top: auto;
+    bottom: 0;
+    z-index: 5;
     
 
-    .sub-logo {
-      visibility: hidden;
+    .logo {
+      display: flex;
+      padding-left: 15px;
+
+      .sub-logo {
+        display: none;
+      }
     }
 
     ul.sidebar-social-icons, ul.language-icons, nav {
@@ -165,41 +249,53 @@
     
     nav {
       width: 100%;
-      top: 0;
+      bottom: 0;
+      top: auto;
       left: 0;
       background: rgb(0,0,0);
-      background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,0.41082370448179273) 100%);
+      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 260px, rgba(0,0,0,0.41082370448179273) 100%);
       height: 100%;
       margin: 0;
       z-index: 2;
       position: fixed;
 
+      
       &.mobile-show {
         display: block;
       }
 
       a {
         display: flex;
-        justify-content: center;
+        justify-content: right;
         align-items: center;
-      }
+        padding-right: 15px;
 
-      a:after {
-        opacity: 1;
-        position: initial;
-        width: auto;
-        margin-left: 10PX;
+        &:after {
+          content: '';
+        }
+
+        &:before {
+          content: attr(data-value);
+          width: auto;
+          margin-right: 10px;
+          font-size: 10px;
+          letter-spacing: 2px;
+        }
       }
 
       a svg {
         opacity: 1 !important;
+      }
+
+      #home {
+        margin-top: calc(100vh - 270px);
       }
     }
 
     .hamburger-icon,
     .close-icon {
         position: absolute;
-        top: 15px;
+        bottom: 15px;
         right: 15px;
         display: block;
     }
