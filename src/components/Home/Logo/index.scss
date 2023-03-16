@@ -1,24 +1,3 @@
-// .logo-container {
-//   position: absolute;
-//   right: 5%;
-//   top: 25%;
-//   transform: translateY(-50%);
-//   width: 40%;
-//   max-height: 10%;
-
-//   .solid-logo {
-//     position: absolute;
-//     top: auto;
-//     right: auto;
-//     bottom: auto;
-//     left: 0;
-//     margin: auto;
-//     max-width: 100%;
-//     max-height: 500px;
-//     z-index: 1;
-//   }
-// }
-
 .logo-container {
   width: 47%;
   height: 56%;
@@ -39,11 +18,11 @@
 
 @media screen and (max-width: 1200px) {
   .logo-container {
-    width: calc(100% - 40px);
+    width: calc(100% - 80px);
     display: flex;
     position: relative;
     top: 20px;
-    right: 20px;
-    left: 20px;
+    right: 40px;
+    left: 40px;
   }  
 }
