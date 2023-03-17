@@ -1,11 +1,22 @@
 .home-page {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+	justify-content: center;
+  padding: 0 150px;
+
   .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40%;
-    max-height: 90%;
+    position: relative;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    // left: 10%;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // width: 40%;
+    // max-height: 90%;
+    // right: 30px;
   }
 
   h1 {
@@ -23,7 +34,7 @@
       font-size: 18px;
       position: absolute;
       margin-top: -40px;
-      left: -15px;
+      // left: px;
       opacity: 0.6;
     }
 
@@ -32,7 +43,7 @@
       font-family: 'La Belle Aurore', cursive;
       color: #0093B9;
       font-size: 18px;
-      position: absolute;
+      position: relative;
       margin-top: 18px;
       margin-left: 20px;
       animation: fadeIn 1s 1.7s backwards;
@@ -85,6 +96,14 @@
   .mobile-break {
     display: none;
   }
+
+  .buttons {
+    display: flex;
+
+    // :first-child {
+    //   margin-right: 10px;
+    // }
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -95,33 +114,36 @@
   }
 
   .home-page .text-zone {
-    position: initial;
+    // position: initial;
     width: 100%;
     transform: none;
-    padding: 10px;
-    box-sizing: border-box;
+    // padding: 10px;
+    // box-sizing: border-box;
     text-align: center;
   }
 
   .home-page {
-    float: none;
-    display: block;
-    margin: 20px auto 0 auto;
-    width: 124px;
+    // float: none;
+    display: flex;
+    flex-direction: column;
+    // margin: 20px auto 0 auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding: 15px 15px 70px 15px;
   }
 
   .buttons {
-    display: flex;
     align-items: center;
-    width: calc(100% - 60px);
-    padding: 0 30px;
+    width: calc(100% - 20px);
+    padding: 0 10px;
 
     .resume-btn,
     .contact-btn {
       width: 50%;
     }
   }
-
 
   .mobile-break {
     display: inline !important;
