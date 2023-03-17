@@ -16,7 +16,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right bottom;
-  background-size: contain;
+  background-size: max(350px, 60vw);
 }
 
 .dashboard {
@@ -27,5 +27,7 @@ body {
 @media screen and (max-width: 1200px) {
   body {
     overflow: visible;
+    background-position: top right;
+    background-image: url("./assets/images/background-rotate.png");
   }
 }

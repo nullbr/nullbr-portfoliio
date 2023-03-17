@@ -15,8 +15,8 @@
 
   h1 {
     color: #1D1D1D;
-    font-size: clamp(40px, 5vw, 56px);
-    line-height: clamp(40px, 5vw, 56px);
+    font-size: 56px;
+    line-height: 53px;
     margin: 0;
     font-family: 'Coolvetica';
     font-weight: 400;
@@ -44,11 +44,10 @@
     }
 
     img {
-      margin-left: 10px;
-      margin-bottom: clamp(-3px, 2vw, -1px);
+      margin-left: 20px;
       opacity: 0;
-      width: auto;
-      height: clamp(30px, 4vw, 45px);;
+      width: 32px;
+      height: auto;
       animation: rotateIn 1s linear both;
       animation-delay: 1.4s;
     }
