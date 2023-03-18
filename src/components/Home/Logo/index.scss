@@ -11,13 +11,13 @@
 
 @media screen and (max-width: 1200px) {
   .logo-container {
-    width: 100%;
-    display: flex;
-    
-    img {
-      padding-top: 15px;
-      max-width: 100%;
-      width: calc(100vh - 470px);
-    }
-  }  
+    // width: 100%;
+    display: none;
+
+    // img {
+    //   padding-top: 15px;
+    //   max-width: 100%;
+    //   width: calc(100vh - 470px);
+    // }
+  }
 }
