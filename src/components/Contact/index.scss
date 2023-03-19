@@ -33,12 +33,12 @@
   }
 
   .flat-button {
-    color: #0093B9;
+    color: #0093b9;
     font-size: 11px;
     letter-spacing: 3px;
     text-decoration: none;
     padding: 8px 10px;
-    border: 1px solid #0093B9;
+    border: 1px solid #0093b9;
     float: left;
     border-radius: 4px;
     background: 0 0;
@@ -49,7 +49,7 @@
     animation: fadeInAnimation 1s 1.8s backwards;
 
     &:hover {
-      background: #0093B9;
+      background: #0093b9;
       color: #fff;
     }
   }
@@ -92,20 +92,26 @@
     font-size: 16px;
 
     span {
-      color: #0093B9;
+      color: #0093b9;
     }
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .map-wrap {
-    float: none;
-    margin: 0;
-    width: 100%;
-    height: 400px;
-  }
-  
-  .info-map {
-    display: none;
+  .contact-page {
+    .map-wrap {
+      float: none;
+      margin: 0;
+      width: 100%;
+      height: 400px;
+    }
+
+    .info-map {
+      display: none;
+    }
+
+    .flat-button {
+      margin-top: 10px;
+    }
   }
 }

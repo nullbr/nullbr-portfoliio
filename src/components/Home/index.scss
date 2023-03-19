@@ -105,7 +105,7 @@
     text-align: center;
   }
 
-  .container,
+  // .container,
   .home-page {
     position: absolute !important;
     height: 100% !important;
@@ -114,6 +114,11 @@
     top: 0 !important;
     right: 0;
     align-items: center;
+
+    .text-zone {
+      width: 100%;
+      padding: 5px;
+    }
   }
 
   .buttons {
