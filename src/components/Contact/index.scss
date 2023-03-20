@@ -33,12 +33,12 @@
   }
 
   .flat-button {
-    color: #0093b9;
+    color: var(--main-color);
     font-size: 11px;
     letter-spacing: 3px;
     text-decoration: none;
     padding: 8px 10px;
-    border: 1px solid #0093b9;
+    border: 1px solid var(--main-color);
     float: left;
     border-radius: 4px;
     background: 0 0;
@@ -49,8 +49,8 @@
     animation: fadeInAnimation 1s 1.8s backwards;
 
     &:hover {
-      background: #0093b9;
-      color: #fff;
+      background: var(--main-color);
+      color: var(--quaternary-color);
     }
   }
 }
@@ -74,13 +74,13 @@
 
 .info-map {
   position: absolute;
-  background: #000;
+  background: var(--secondary-color);
   top: 50px;
   right: 30%;
   z-index: 999999;
   width: 267px;
   padding: 20px;
-  color: #fff;
+  color: var(--quaternary-color);
   font-family: 'Helvetica';
   font-size: 17px;
   font-weight: 300;
@@ -92,7 +92,7 @@
     font-size: 16px;
 
     span {
-      color: #0093b9;
+      color: var(--main-color);
     }
   }
 }

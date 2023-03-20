@@ -14,7 +14,7 @@
   }
 
   h1 {
-    color: #1d1d1d;
+    color: var(--secondary-color);
     font-size: 56px;
     line-height: 53px;
     margin: 0;
@@ -24,7 +24,7 @@
     &:before {
       content: '<h1>';
       font-family: 'La Belle Aurore', cursive;
-      color: #0093b9;
+      color: var(--main-color);
       font-size: 18px;
       position: absolute;
       margin-top: -40px;
@@ -34,7 +34,7 @@
     &:after {
       content: '<h1/>';
       font-family: 'La Belle Aurore', cursive;
-      color: #0093b9;
+      color: var(--main-color);
       font-size: 18px;
       position: relative;
       margin-top: 18px;
@@ -54,7 +54,7 @@
   }
 
   h2 {
-    color: #8d8d8d;
+    color: var(--tertiary-color);
     margin-top: 20px;
     font-weight: 400;
     font-size: 11px;
@@ -74,12 +74,16 @@
       padding-right: 8px;
       font-size: 20px;
       line-height: 21px;
-      color: #4d4d4e;
+      color: var(--tertiary-color);
       animation: fadeIn 1s 1.8s backwards;
+
+      .anchor-icon {
+        color: var(--tertiary-color);
+      }
 
       &:hover {
         .anchor-icon {
-          color: #0093b9;
+          color: var(--main-color);
         }
       }
     }

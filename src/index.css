@@ -1,3 +1,11 @@
+:root {
+  --main-color: #0093b9;
+  --secondary-color: #1d1d1d;
+  --tertiary-color: #4d4d4e;
+  --quaternary-color: #fff;
+  --quinary-color: #e9f1fa;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -8,11 +16,11 @@ body {
   color: #444;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #E9F1FA;
+  background: var(--quinary-color);
   overflow: hidden;
   display: block;
 
-  background-image: url("./assets/images/background.png");
+  background-image: url('./assets/images/background.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right bottom;
@@ -28,6 +36,6 @@ body {
   body {
     overflow: visible;
     background-position: top right;
-    background-image: url("./assets/images/background-rotate.png");
+    background-image: url('./assets/images/background-rotate.png');
   }
 }
