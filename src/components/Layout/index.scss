@@ -293,7 +293,7 @@
 
   &:hover {
     background: var(--main-color);
-    color: var(--quaternary-color);
+    color: var(--secondary-color);
   }
 }
 
@@ -342,7 +342,7 @@ input[type='text'],
 input[type='email'] {
   width: 100%;
   border: 0;
-  background: var(--quaternary-color);
+  background: var(--secondary-color);
   height: 50px;
   font-size: 16px;
   color: var(--tertiary-color);
@@ -353,7 +353,7 @@ input[type='email'] {
 textarea {
   width: 100%;
   border: 0;
-  background: var(--quaternary-color);
+  background: var(--secondary-color);
   height: 50px;
   font-size: 16px;
   color: var(--tertiary-color);

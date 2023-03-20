@@ -1,9 +1,15 @@
-:root {
+/* :root {
   --main-color: #0093b9;
   --secondary-color: #1d1d1d;
   --tertiary-color: #4d4d4e;
-  --quaternary-color: #fff;
-  --quinary-color: #e9f1fa;
+  --quaternary-color: #e9f1fa;
+} */
+
+:root {
+  --main-color: #0093b9;
+  --secondary-color: #e9f1fa;
+  --tertiary-color: #fff;
+  --quaternary-color: #000;
 }
 
 html {
@@ -13,10 +19,10 @@ html {
 body {
   margin: 0;
   font: 300 11px/1.4 'Helvetica Neue', sans-serif;
-  color: #444;
+  color: var(--tertiary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--quinary-color);
+  background: var(--quaternary-color);
   overflow: hidden;
   display: block;
 
