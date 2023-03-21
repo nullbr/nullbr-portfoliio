@@ -4,7 +4,7 @@ import './index.scss'
 
 const Layout = () => {
   return (
-    <div className="App">
+    <div className="App dark-mode">
       <Sidebar />
       <div className="page">
         <span className="tags top-tags">&lt;body&gt;</span>
