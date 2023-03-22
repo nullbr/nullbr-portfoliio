@@ -122,11 +122,6 @@
     bottom: 20px;
 
     li {
-      .theme-button {
-        font-size: 25px;
-        color: var(--sidebar-links);
-      }
-
       button {
         padding: 7px 20px;
         display: block;
@@ -144,8 +139,22 @@
       }
     }
   }
+
+  .theme-button {
+    font-size: 40px;
+    color: var(--sidebar-links);
+
+    svg[data-icon='sun'] {
+      color: #ffe87c;
+    }
+
+    svg[data-icon='moon'] {
+      color: #fefcd7;
+    }
+  }
 }
 
+// Adding borders depending on the theme
 .nav-bar {
   border-top: none;
   border-right: calc(var(--is-dark-theme) * 1px) solid var(--main-color);
@@ -234,7 +243,6 @@
   /* Mobile navbar */
 
   .nav-bar {
-    // background: transparent;
     width: 100%;
     position: fixed;
     height: auto;
@@ -243,6 +251,7 @@
     top: auto;
     bottom: 0;
     z-index: 5;
+    // Adding borders depending on the theme
     border-top: calc(var(--is-dark-theme) * 1px) solid var(--main-color);
     border-right: none;
 
@@ -327,22 +336,18 @@
 
     .toggle-buttons-mobile {
       position: absolute;
-      top: 10px;
-      right: calc(50% - 54px);
-      display: block;
-
-      .theme-button {
-        color: var(--sidebar-links);
-        font-size: 20px;
-      }
+      right: calc(50% - 61.5px);
+      display: flex;
+      align-items: center;
+      height: 100%;
 
       button {
-        padding: 12px 8px;
+        padding: 0 8px;
         background: transparent;
         border: none;
 
         svg {
-          width: 20px;
+          width: 25px;
           pointer-events: none;
         }
       }

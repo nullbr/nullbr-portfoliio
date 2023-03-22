@@ -12,7 +12,8 @@ import {
   faBars,
   faClose,
   faSuitcase,
-  faCircleHalfStroke,
+  faSun,
+  faMoon,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -190,7 +191,7 @@ const Sidebar = () => {
       <ul className="toggle-buttons">
         <li>
           <button onClick={changeTheme} className="theme-button">
-            <FontAwesomeIcon icon={faCircleHalfStroke} />
+            <FontAwesomeIcon icon={faSun} />
           </button>
         </li>
         <li>
@@ -212,7 +213,7 @@ const Sidebar = () => {
           <BR title="Portuguese" className="..." />
         </button>
         <button onClick={changeTheme} className="theme-button">
-          <FontAwesomeIcon icon={faCircleHalfStroke} />
+          <FontAwesomeIcon icon={darkTheme === 'yes' ? faSun : faMoon} />
         </button>
       </div>
       <FontAwesomeIcon
