@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
-import './i18n/config';
+import './i18n/config'
 import './index.css'
 
 ReactDOM.render(
@@ -11,7 +11,6 @@ ReactDOM.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-    ,
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -19,18 +19,37 @@ import { useTranslation } from 'react-i18next'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const Sidebar = () => {
-  const { t } = useTranslation()
-  const { i18n } = useTranslation()
   const [showNav, setShowNav] = useState(false)
   const [navFadeOut, setNavFadeOut] = useState(false)
-  const [darkTheme, setTheme] = useState(localStorage.getItem('darkTheme'))
+  const { t } = useTranslation()
+  const { i18n } = useTranslation()
+  const [language, setLanguage] = useState(localStorage.getItem('language'))
+  const [darkTheme, setTheme] = useState(getTheme())
+
+  function getTheme() {
+    const storage = localStorage.getItem('darkTheme')
+    if (storage === 'yes' || storage === 'no') {
+      return localStorage.getItem('darkTheme')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'yes'
+    } else {
+      return 'no'
+    }
+  }
+
+  console.log(darkTheme)
 
   function changeLanguage(e) {
+    setLanguage(e.target.value)
     i18n.changeLanguage(e.target.value)
   }
 
+  useEffect(() => {
+    localStorage.setItem('language', language)
+  }, [language])
+
   function changeTheme() {
-    setTheme(!darkTheme)
+    setTheme(darkTheme === 'yes' ? 'no' : 'yes')
   }
 
   useEffect(() => {
@@ -53,7 +72,7 @@ const Sidebar = () => {
         '--sidebar-links': '#fff',
         '--is-dark-theme': 0,
       }
-      const currentTheme = darkTheme ? darkMode : lightMode
+      const currentTheme = darkTheme === 'yes' ? darkMode : lightMode
 
       for (var prop in currentTheme) {
         document.documentElement.style.setProperty(prop, currentTheme[prop])
