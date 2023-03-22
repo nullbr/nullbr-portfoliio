@@ -50,6 +50,11 @@
         rgba(0, 0, 0, 1)
       );
       bottom: -70px;
+
+      h4,
+      p {
+        color: var(--sidebar-links);
+      }
     }
 
     .title {
@@ -77,7 +82,7 @@
       border: 2px solid var(--main-color);
       border-radius: 4px;
       font-size: 14px;
-      color: var(--secondary-color);
+      color: var(--sidebar-links);
       background: transparent;
       text-transform: uppercase;
       font-weight: 700;
@@ -132,11 +137,14 @@
     }
 
     .image-box {
-      //   height: 200px;
       min-width: calc(50% - 10px);
       max-width: 400px;
       max-height: 600px;
       min-height: 400px;
+
+      .content {
+        bottom: 0px;
+      }
     }
   }
 }
@@ -157,12 +165,15 @@
     }
 
     .image-box {
-      //   height: 200px;
       width: 100%;
-      height: calc(50vw - 10px);
+      height: 400px;
       min-height: 200px;
       min-width: 50%;
       max-width: 100%;
+
+      .content {
+        bottom: 0px;
+      }
     }
   }
 }
