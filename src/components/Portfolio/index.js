@@ -39,39 +39,31 @@ const Portfolio = () => {
             i18n.language === 'en' ? port.description_en : port.description_pt
 
           return (
-            <a
-              className="image-box"
-              href={port.url || port.repo_url}
-              target="_blank"
-              rel="noreferrer"
-              key={idx}
-            >
-              <div>
-                <img
-                  src={port.image}
-                  className="portfolio-image"
-                  alt="portfolio"
-                />
-                <div className="content">
-                  <p className="title">{port.name}</p>
-                  <h4 className="description">{description}</h4>
-                  <button
-                    hidden={port.url ? '' : 'hidden'}
-                    className="btn"
-                    onClick={() => window.open(port.url)}
-                  >
-                    {t('portfolio.view')}
-                  </button>
-                  <button
-                    hidden={port.repo_url ? '' : 'hidden'}
-                    className="btn"
-                    onClick={() => window.open(port.repo_url)}
-                  >
-                    {t('portfolio.github')}
-                  </button>
-                </div>
+            <div className="image-box" key={idx}>
+              <img
+                src={port.image}
+                className="portfolio-image"
+                alt="portfolio"
+              />
+              <div className="content">
+                <p className="title">{port.name}</p>
+                <h4 className="description">{description}</h4>
+                <button
+                  hidden={port.url ? '' : 'hidden'}
+                  className="btn"
+                  onClick={() => window.open(port.url)}
+                >
+                  {t('portfolio.view')}
+                </button>
+                <button
+                  hidden={port.repo_url ? '' : 'hidden'}
+                  className="btn"
+                  onClick={() => window.open(port.repo_url)}
+                >
+                  {t('portfolio.github')}
+                </button>
               </div>
-            </a>
+            </div>
           )
         })}
       </div>
