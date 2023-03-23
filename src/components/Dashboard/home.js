@@ -14,6 +14,7 @@ const Home = () => {
     const url = form.current[3]?.value
     const repo_url = form.current[4]?.value
     const image = form.current[5]?.files[0]
+    const position = parseInt(form.current[6]?.value)
 
     const storageRef = ref(storage, `portfolio/${image.name}`)
 
@@ -28,6 +29,7 @@ const Home = () => {
               url,
               repo_url,
               image: downloadUrl,
+              position,
             })
           },
           (error) => {
@@ -39,6 +41,7 @@ const Home = () => {
               url,
               repo_url,
               image: null,
+              position,
             })
           }
         )
@@ -52,6 +55,7 @@ const Home = () => {
           url,
           repo_url,
           image: null,
+          position,
         })
       }
     )
@@ -87,6 +91,9 @@ const Home = () => {
         </p>
         <p>
           <input type="file" placeholder="Image" />
+        </p>
+        <p>
+          <input type="number" placeholder="Position" />
         </p>
         <button type="submit">Submit</button>
         <button onClick={() => auth.signOut()}>Sign out</button>

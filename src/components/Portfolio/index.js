@@ -32,9 +32,14 @@ const Portfolio = () => {
   }
 
   const renderPortfolio = (portfolio) => {
+    var sortedPortfolio = Array(portfolio.length)
+    portfolio.forEach((item, idx) => {
+      sortedPortfolio[item.position] = item
+    })
+
     return (
       <div className="images-container">
-        {portfolio.map((port, idx) => {
+        {sortedPortfolio.map((port, idx) => {
           let description =
             i18n.language === 'en' ? port.description_en : port.description_pt
 
