@@ -1,3 +1,21 @@
+:root.light {
+  --main-color: #0093b9;
+  --secondary-color: #1d1d1d;
+  --tertiary-color: #4d4d4e;
+  --quaternary-color: #e9f1fa;
+  --sidebar-links: #fff;
+  --is-dark-theme: 0;
+}
+
+:root.dark {
+  --main-color: #0093b9;
+  --secondary-color: #e9f1fa;
+  --tertiary-color: #fff;
+  --quaternary-color: #000;
+  --sidebar-links: #fff;
+  --is-dark-theme: 1;
+}
+
 html {
   font-size: 62.5%;
 }

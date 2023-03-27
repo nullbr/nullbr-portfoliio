@@ -25,22 +25,8 @@ const Sidebar = () => {
   const { t } = useTranslation()
   const { i18n } = useTranslation()
   const [language, setLanguage] = useState(localStorage.getItem('language'))
-  const [darkTheme, setTheme] = useState(getTheme())
 
-  function getTheme() {
-    const storage = localStorage.getItem('darkTheme')
-    if (storage === 'yes' || storage === 'no') {
-      return localStorage.getItem('darkTheme')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'yes'
-    } else {
-      return 'no'
-    }
-  }
-
-  console.log(darkTheme)
-
-  function changeLanguage(e) {
+  const changeLanguage = (e) => {
     setLanguage(e.target.value)
     i18n.changeLanguage(e.target.value)
   }
@@ -49,38 +35,25 @@ const Sidebar = () => {
     localStorage.setItem('language', language)
   }, [language])
 
-  function changeTheme() {
-    setTheme(darkTheme === 'yes' ? 'no' : 'yes')
+  const getTheme = () => {
+    const storage = localStorage.getItem('theme')
+
+    if (storage !== null) {
+      return localStorage.getItem('theme')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    } else {
+      return 'light'
+    }
   }
+  const [theme, setTheme] = useState(getTheme())
 
   useEffect(() => {
-    localStorage.setItem('darkTheme', darkTheme)
+    localStorage.setItem('theme', theme)
 
-    function setThemeColors() {
-      const darkMode = {
-        '--main-color': '#0093b9',
-        '--secondary-color': '#e9f1fa',
-        '--tertiary-color': '#fff',
-        '--quaternary-color': '#000',
-        '--sidebar-links': '#fff',
-        '--is-dark-theme': 1,
-      }
-      const lightMode = {
-        '--main-color': '#0093b9',
-        '--secondary-color': '#1d1d1d',
-        '--tertiary-color': '#4d4d4e',
-        '--quaternary-color': '#e9f1fa',
-        '--sidebar-links': '#fff',
-        '--is-dark-theme': 0,
-      }
-      const currentTheme = darkTheme === 'yes' ? darkMode : lightMode
-
-      for (var prop in currentTheme) {
-        document.documentElement.style.setProperty(prop, currentTheme[prop])
-      }
-    }
-    setThemeColors()
-  }, [darkTheme])
+    const root = document.documentElement
+    root.className = theme
+  }, [theme])
 
   return (
     <div className="nav-bar">
@@ -190,7 +163,10 @@ const Sidebar = () => {
       </ul>
       <ul className="toggle-buttons">
         <li>
-          <button onClick={changeTheme} className="theme-button">
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="theme-button"
+          >
             <FontAwesomeIcon icon={faSun} />
           </button>
         </li>
@@ -212,8 +188,11 @@ const Sidebar = () => {
         <button onClick={changeLanguage} value="pt">
           <BR title="Portuguese" className="..." />
         </button>
-        <button onClick={changeTheme} className="theme-button">
-          <FontAwesomeIcon icon={darkTheme === 'yes' ? faSun : faMoon} />
+        <button
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          className="theme-button"
+        >
+          <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
         </button>
       </div>
       <FontAwesomeIcon
