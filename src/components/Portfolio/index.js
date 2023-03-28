@@ -4,13 +4,12 @@ import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import { getDocs, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
-import { useTranslation } from 'react-i18next'
+import { useAppContext } from '../Layout'
 
 const Portfolio = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const [portfolio, setPortfolio] = useState([])
-  const { t } = useTranslation()
-  const { i18n } = useTranslation()
+  const { t, i18n } = useAppContext()
 
   useEffect(() => {
     const timer = setTimeout(() => {

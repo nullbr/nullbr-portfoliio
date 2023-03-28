@@ -16,14 +16,13 @@ import {
   faMoon,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { useAppContext } from '../Layout'
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(false)
   const [navFadeOut, setNavFadeOut] = useState(false)
-  const { t } = useTranslation()
-  const { i18n } = useTranslation()
+  const { t, i18n } = useAppContext()
   const [language, setLanguage] = useState(localStorage.getItem('language'))
 
   const changeLanguage = (e) => {

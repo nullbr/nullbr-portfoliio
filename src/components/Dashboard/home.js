@@ -1,62 +1,36 @@
-import { useRef } from 'react'
 import { auth, storage, db } from '../../firebase'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { doc, setDoc } from 'firebase/firestore'
+import Loader from 'react-loaders'
 
 const Home = () => {
-  const form = useRef()
-
   const submitPortfolio = (e) => {
     e.preventDefault()
-    const name = form.current[0]?.value
-    const description_en = form.current[1]?.value
-    const description_pt = form.current[2]?.value
-    const url = form.current[3]?.value
-    const repo_url = form.current[4]?.value
-    const image = form.current[5]?.files[0]
-    const position = parseInt(form.current[6]?.value)
 
+    const formData = new FormData(e.currentTarget)
+    const newItem = Object.fromEntries(formData)
+    const image = newItem.image
     const storageRef = ref(storage, `portfolio/${image.name}`)
+
+    newItem.position = parseInt(newItem.position)
+    newItem.image = null
 
     uploadBytes(storageRef, image).then(
       (snapshot) => {
         getDownloadURL(snapshot.ref).then(
           (downloadUrl) => {
-            savePortfolio({
-              name,
-              description_en,
-              description_pt,
-              url,
-              repo_url,
-              image: downloadUrl,
-              position,
-            })
+            savePortfolio({ ...newItem, image: downloadUrl })
+            e.currentTarget.reset()
           },
           (error) => {
             console.log(error)
-            savePortfolio({
-              name,
-              description_en,
-              description_pt,
-              url,
-              repo_url,
-              image: null,
-              position,
-            })
+            console.log(newItem)
           }
         )
       },
       (error) => {
         console.log(error)
-        savePortfolio({
-          name,
-          description_en,
-          description_pt,
-          url,
-          repo_url,
-          image: null,
-          position,
-        })
+        console.log(newItem)
       }
     )
   }
@@ -65,6 +39,7 @@ const Home = () => {
     try {
       await setDoc(doc(db, 'portfolio', portfolio.name), portfolio)
       window.location.reload(false)
+      alert('Successfully added to portfolio')
     } catch (error) {
       console.log(error)
       alert('Failed to add portfolio')
@@ -73,27 +48,45 @@ const Home = () => {
 
   return (
     <div className="container dashboard-page">
-      <form ref={form} onSubmit={submitPortfolio}>
+      <form onSubmit={submitPortfolio}>
         <p>
-          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Name" id="name" name="name" />
         </p>
         <p>
-          <textarea placeholder="Description English" />
+          <textarea
+            placeholder="Description English"
+            id="description_en"
+            name="description_en"
+          />
         </p>
         <p>
-          <textarea placeholder="Description Portuguese" />
+          <textarea
+            placeholder="Description Portuguese"
+            id="description_pt"
+            name="description_pt"
+          />
         </p>
         <p>
-          <input type="text" placeholder="Url" />
+          <input type="text" placeholder="Url" id="url" name="url" />
         </p>
         <p>
-          <input type="text" placeholder="GitHub" />
+          <input
+            type="text"
+            placeholder="GitHub"
+            id="repo_url"
+            name="repo_url"
+          />
         </p>
         <p>
-          <input type="file" placeholder="Image" />
+          <input type="file" placeholder="Image" id="image" name="image" />
         </p>
         <p>
-          <input type="number" placeholder="Position" />
+          <input
+            type="number"
+            placeholder="Position"
+            id="position"
+            name="position"
+          />
         </p>
         <button type="submit">Submit</button>
         <button onClick={() => auth.signOut()}>Sign out</button>

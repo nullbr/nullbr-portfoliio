@@ -6,11 +6,11 @@ import LogoTitle from '../../assets/images/logo-s.png'
 import Logo from './Logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { useTranslation } from 'react-i18next'
 import './index.scss'
+import { useAppContext } from '../Layout'
 
 const Home = () => {
-  const { t } = useTranslation()
+  const { t } = useAppContext()
 
   const [letterClass, setLetterClass] = useState('text-animate')
 
