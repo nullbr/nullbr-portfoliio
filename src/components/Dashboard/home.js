@@ -1,7 +1,6 @@
 import { auth, storage, db } from '../../firebase'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { doc, setDoc } from 'firebase/firestore'
-import Loader from 'react-loaders'
 
 const Home = () => {
   const submitPortfolio = (e) => {
