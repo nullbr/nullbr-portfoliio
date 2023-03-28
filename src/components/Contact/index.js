@@ -5,12 +5,12 @@ import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
-import { useTranslation } from 'react-i18next'
+import { useAppContext } from '../../context'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
-  const { t } = useTranslation()
+  const { t } = useAppContext()
 
   useEffect(() => {
     return setTimeout(() => {
@@ -19,16 +19,25 @@ const Contact = () => {
   }, [])
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    emailjs.sendForm('service_bvhqapb', 'template_gyweosm', form.current, 'cTwOxaU2kVqzmEP2i')
-      .then(() => {
-        alert('Message successfully sent!');
-        window.location.reload(false);
-      }, () => {
-        alert('Failed to send the message, please try again');
-      });
-  };
+    emailjs
+      .sendForm(
+        'service_bvhqapb',
+        'template_gyweosm',
+        form.current,
+        'cTwOxaU2kVqzmEP2i'
+      )
+      .then(
+        () => {
+          alert('Message successfully sent!')
+          window.location.reload(false)
+        },
+        () => {
+          alert('Failed to send the message, please try again')
+        }
+      )
+  }
 
   return (
     <>
@@ -37,22 +46,25 @@ const Contact = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={t('contact.title').split("")}
+              strArray={t('contact.title').split('')}
               idx={15}
             />
           </h1>
-          <p>
-            {t("contact.paragraph")}
-          </p>
+          <p>{t('contact.paragraph')}</p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
               <ul>
                 <li className="half">
-                  <input placeholder={t("contact.name")} type="text" name="name" required />
+                  <input
+                    placeholder={t('contact.name')}
+                    type="text"
+                    name="name"
+                    required
+                  />
                 </li>
                 <li className="half">
                   <input
-                    placeholder={t("contact.email")}
+                    placeholder={t('contact.email')}
                     type="email"
                     name="email"
                     required
@@ -60,7 +72,7 @@ const Contact = () => {
                 </li>
                 <li>
                   <input
-                    placeholder={t("contact.subject")}
+                    placeholder={t('contact.subject')}
                     type="text"
                     name="subject"
                     required
@@ -68,13 +80,17 @@ const Contact = () => {
                 </li>
                 <li>
                   <textarea
-                    placeholder={t("contact.message")}
+                    placeholder={t('contact.message')}
                     name="message"
                     required
                   ></textarea>
                 </li>
                 <li>
-                  <input type="submit" className="flat-button" value={t("contact.button")} />
+                  <input
+                    type="submit"
+                    className="flat-button"
+                    value={t('contact.button')}
+                  />
                 </li>
               </ul>
             </form>
@@ -83,7 +99,7 @@ const Contact = () => {
         <div className="info-map">
           São Paulo,
           <br />
-          {t("contact.brazil")}
+          {t('contact.brazil')}
           <br />
           <span>bmarianoleite3@gmail.com</span>
         </div>

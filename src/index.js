@@ -5,11 +5,14 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './i18n/config'
 import './index.css'
+import GlobalContext from './context'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <GlobalContext>
+        <App />
+      </GlobalContext>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

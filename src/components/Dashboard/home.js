@@ -37,8 +37,8 @@ const Home = () => {
   const savePortfolio = async (portfolio) => {
     try {
       await setDoc(doc(db, 'portfolio', portfolio.name), portfolio)
-      window.location.reload(false)
       alert('Successfully added to portfolio')
+      window.location.reload(false)
     } catch (error) {
       console.log(error)
       alert('Failed to add portfolio')

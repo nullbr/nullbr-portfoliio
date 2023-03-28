@@ -4,7 +4,7 @@ import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import { getDocs, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
-import { useAppContext } from '../Layout'
+import { useAppContext } from '../../context'
 
 const Portfolio = () => {
   const [letterClass, setLetterClass] = useState('text-animate')

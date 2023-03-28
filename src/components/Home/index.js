@@ -7,7 +7,7 @@ import Logo from './Logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import './index.scss'
-import { useAppContext } from '../Layout'
+import { useAppContext } from '../../context'
 
 const Home = () => {
   const { t } = useAppContext()

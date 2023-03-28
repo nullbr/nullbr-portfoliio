@@ -17,7 +17,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { useAppContext } from '../Layout'
+import { useAppContext } from '../../context'
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(false)
