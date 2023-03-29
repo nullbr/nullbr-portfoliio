@@ -27,7 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--quaternary-color);
-  overflow: hidden;
+  overflow: visible;
   display: block;
 
   background-image: url('./assets/images/background.png');

@@ -2,10 +2,10 @@
   width: 50%;
   height: 100%;
   top: 0;
-  padding-top: 18%;
+  right: 0;
+  padding-top: max(0, 35vh);
   margin-left: 0;
   position: absolute;
-  right: 0;
   overflow: hidden;
 }
 
@@ -94,11 +94,12 @@
     height: 400px;
     float: none;
     display: block;
-    margin: 0 auto 0 auto;
+    margin: 0 auto 70px auto;
     position: relative;
     top: 20px;
     right: 0;
     box-sizing: border-box;
     left: 0;
-  }  
+    padding-top: 18%;
+  }
 }
