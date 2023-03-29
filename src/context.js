@@ -6,9 +6,11 @@ const AppContext = createContext()
 export const useAppContext = () => useContext(AppContext)
 
 const GlobalContext = ({ children }) => {
+  // Set language constants
   const { t } = useTranslation()
   const { i18n } = useTranslation()
 
+  // Find theme on page reload and set the root class to theme
   const defaultTheme = useMemo(() => {
     const storage = localStorage.getItem('theme')
 

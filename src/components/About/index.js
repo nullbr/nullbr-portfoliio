@@ -1,31 +1,18 @@
-import { useEffect, useState } from 'react'
 import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import { Link } from 'react-router-dom'
 import { useAppContext } from '../../context'
+import Title from '../Title'
 
 const About = () => {
   const { t } = useAppContext()
-  const [letterClass, setLetterClass] = useState('text-animate')
-
-  useEffect(() => {
-    return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
 
   return (
     <>
       <div className="container about-page">
         <div className="text-zone">
-          <h1>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={t('about.title').split('')}
-              idx={15}
-            />
-          </h1>
+          <Title title={t('about.title')} idx={15} />
+
           <p>{t('about.paragraph1')}</p>
           <p>{t('about.paragraph2')}</p>
           <p>{t('about.paragraph3')}</p>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
+import AnimatedLetters from '../Title/AnimatedLetters'
 import LogoTitle from '../../assets/images/logo-s.png'
 import Logo from './Logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,12 +13,6 @@ const Home = () => {
   const { t } = useAppContext()
 
   const [letterClass, setLetterClass] = useState('text-animate')
-
-  const hiArray = t('home.hi').split('')
-  const imArray = t('home.im').split('')
-  const nameArray = ['r', 'u', 'n', 'o', ',']
-  const stackArray = 'Full Stack '.split('')
-  const devArray = 'Developer'.split('')
 
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -37,13 +31,13 @@ const Home = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={hiArray}
+              strArray={t('home.hi').split('')}
               idx={11}
             />
             <br />
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={imArray}
+              strArray={t('home.im').split('')}
               idx={13}
             />
             <img
@@ -52,20 +46,20 @@ const Home = () => {
             />
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={nameArray}
+              strArray={'runo,'.split('')}
               idx={15}
             />
             <br />
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={stackArray}
+              strArray={'Full Stack '.split('')}
               idx={22}
             />
             <br className="mobile-break" />
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={devArray}
-              idx={27}
+              strArray={'Developer'.split('')}
+              idx={22}
             />
           </h1>
           <h2>{t('home.find_me')} </h2>

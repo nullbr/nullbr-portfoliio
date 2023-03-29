@@ -1,22 +1,14 @@
-import { useEffect, useState } from 'react'
 import Loader from 'react-loaders'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import { useAppContext } from '../../context'
+import Title from '../Title'
 
 const Contact = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
   const { t } = useAppContext()
-
-  useEffect(() => {
-    return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -43,13 +35,8 @@ const Contact = () => {
     <>
       <div className="container contact-page">
         <div className="text-zone">
-          <h1>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={t('contact.title').split('')}
-              idx={15}
-            />
-          </h1>
+          <Title title={t('contact.title')} idx={15} />
+
           <p>{t('contact.paragraph')}</p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
