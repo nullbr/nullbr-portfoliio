@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
@@ -21,14 +21,19 @@ const Portfolio = () => {
     }
   })
 
-  useEffect(() => {
-    getPortfolio()
+  const getPortfolio = useCallback(async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, 'portfolio'))
+      setPortfolio(querySnapshot.docs.map((doc) => doc.data()))
+    } catch (error) {
+      console.log(error)
+      alert('Sorry! There was a hiccup.')
+    }
   }, [])
 
-  const getPortfolio = async () => {
-    const querySnapshot = await getDocs(collection(db, 'portfolio'))
-    setPortfolio(querySnapshot.docs.map((doc) => doc.data()))
-  }
+  useEffect(() => {
+    getPortfolio()
+  }, [getPortfolio])
 
   const renderPortfolio = (portfolio) => {
     var sortedPortfolio = Array(portfolio.length)
