@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import Loader from 'react-loaders'
 
 const AppContext = createContext()
 
@@ -31,7 +32,7 @@ const GlobalContext = ({ children }) => {
   }, [defaultTheme])
 
   return (
-    <AppContext.Provider value={{ t, i18n, defaultTheme }}>
+    <AppContext.Provider value={{ t, i18n, defaultTheme, Loader }}>
       {children}
     </AppContext.Provider>
   )

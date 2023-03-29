@@ -1,11 +1,10 @@
-import Loader from 'react-loaders'
 import './index.scss'
 import { Link } from 'react-router-dom'
 import { useAppContext } from '../../context'
 import Title from '../Title'
 
 const About = () => {
-  const { t } = useAppContext()
+  const { t, Loader } = useAppContext()
 
   return (
     <>

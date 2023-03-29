@@ -1,4 +1,3 @@
-import Loader from 'react-loaders'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
@@ -8,7 +7,7 @@ import Title from '../Title'
 
 const Contact = () => {
   const form = useRef()
-  const { t } = useAppContext()
+  const { t, Loader } = useAppContext()
 
   const sendEmail = (e) => {
     e.preventDefault()

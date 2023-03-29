@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Loader from 'react-loaders'
 import AnimatedLetters from '../Title/AnimatedLetters'
 import LogoTitle from '../../assets/images/logo-s.png'
 import Logo from './Logo'
@@ -10,7 +9,7 @@ import './index.scss'
 import { useAppContext } from '../../context'
 
 const Home = () => {
-  const { t } = useAppContext()
+  const { t, Loader } = useAppContext()
 
   const [letterClass, setLetterClass] = useState('text-animate')
 

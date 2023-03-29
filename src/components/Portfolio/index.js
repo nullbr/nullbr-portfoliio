@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import Loader from 'react-loaders'
 import './index.scss'
 import { getDocs, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
@@ -9,7 +8,7 @@ import PortfolioItems from './portfolioItems'
 
 const Portfolio = () => {
   const [portfolio, setPortfolio] = useState([])
-  const { t } = useAppContext()
+  const { t, Loader } = useAppContext()
 
   const getPortfolio = useCallback(async () => {
     try {
