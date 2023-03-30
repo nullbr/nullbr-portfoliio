@@ -20,10 +20,10 @@ const Dashboard = () => {
   }, [])
 
   return (
-    <>
+    <div className="container dashboard-page">
       {user ? <Home /> : <Login />}
       <Loader type="pacman" />
-    </>
+    </div>
   )
 }
 

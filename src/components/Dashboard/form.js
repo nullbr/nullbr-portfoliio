@@ -2,6 +2,7 @@ const Form = ({ submitPortfolio, auth }) => {
   return (
     <>
       <form onSubmit={submitPortfolio}>
+        <h2>Project Information</h2>
         <div className="form-row">
           <input type="text" placeholder="Name" id="name" name="name" />
         </div>
@@ -42,10 +43,13 @@ const Form = ({ submitPortfolio, auth }) => {
           <input type="file" placeholder="Image" id="image" name="image" />
         </div>
 
-        <button className="submit-button" type="submit">
+        <button className="flat-button submit-button" type="submit">
           Submit
         </button>
-        <button className="cancel-button" onClick={() => auth.signOut()}>
+        <button
+          className="flat-button cancel-button"
+          onClick={() => auth.signOut()}
+        >
           Sign out
         </button>
       </form>
