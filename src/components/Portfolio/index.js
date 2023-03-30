@@ -1,28 +1,20 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './index.scss'
-import { getDocs, collection } from 'firebase/firestore'
-import { db } from '../../firebase'
 import { useAppContext } from '../../context'
 import Title from '../Title'
 import PortfolioItems from './portfolioItems'
+import { useDispatch, useSelector } from 'react-redux'
+import { getPortfolioItems } from '../../features/portfolio/porfolioSlice'
 
 const Portfolio = () => {
-  const [portfolio, setPortfolio] = useState([])
   const { t, Loader } = useAppContext()
 
-  const getPortfolio = useCallback(async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, 'portfolio'))
-      setPortfolio(querySnapshot.docs.map((doc) => doc.data()))
-    } catch (error) {
-      console.log(error)
-      alert('Sorry! There was a hiccup.')
-    }
-  }, [])
+  const { portfolioItems, isLoading } = useSelector((store) => store.portfolio)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    getPortfolio()
-  }, [getPortfolio])
+    dispatch(getPortfolioItems())
+  }, [dispatch])
 
   return (
     <>
@@ -33,7 +25,7 @@ const Portfolio = () => {
           <p>{t('portfolio.paragraph')}</p>
           <br />
 
-          <PortfolioItems portfolio={portfolio} />
+          {!isLoading && <PortfolioItems portfolio={portfolioItems} />}
         </div>
       </div>
       <Loader type="pacman" />
