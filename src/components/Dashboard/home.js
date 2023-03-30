@@ -48,7 +48,10 @@ const Home = () => {
 
   return (
     <div className="container dashboard-page">
-      <Form auth={auth} submitPortfolio={submitPortfolio} />
+      <div className="buttons-container">buttons</div>
+      <div className="form-container">
+        <Form auth={auth} submitPortfolio={submitPortfolio} />
+      </div>
     </div>
   )
 }

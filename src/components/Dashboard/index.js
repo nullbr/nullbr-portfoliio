@@ -3,6 +3,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import Home from './home'
 import Login from '../Login'
 import Loader from 'react-loaders'
+import './index.scss'
 
 const Dashboard = () => {
   const [user, setUser] = useState(null)
