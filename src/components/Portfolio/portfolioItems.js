@@ -3,14 +3,9 @@ import { useAppContext } from '../../context'
 const PortfolioItems = ({ portfolio }) => {
   const { t, i18n } = useAppContext()
 
-  var sortedPortfolio = Array(portfolio.length)
-  portfolio.forEach((item) => {
-    sortedPortfolio[item.position] = item
-  })
-
   return (
     <div className="images-container">
-      {sortedPortfolio.map((port, idx) => {
+      {portfolio.map((port, idx) => {
         let description =
           i18n.language === 'en' ? port.description_en : port.description_pt
 

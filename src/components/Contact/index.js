@@ -82,14 +82,14 @@ const Contact = () => {
             </form>
           </div>
         </div>
-        <div className="info-map">
-          São Paulo,
-          <br />
-          {t('contact.brazil')}
-          <br />
-          <span>bmarianoleite3@gmail.com</span>
-        </div>
         <div className="map-wrap">
+          <div className="info-map">
+            {t('defaults.state')},
+            <br />
+            {t('contact.brazil')}
+            <br />
+            <span>{t('defaults.email')}</span>
+          </div>
           <MapContainer center={[-23.599034, -48.486063]} zoom={9}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={[-23.599034, -48.486063]}>

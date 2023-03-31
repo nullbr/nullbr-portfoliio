@@ -1,5 +1,7 @@
 {
   "defaults.resume-button": "RESUME",
+  "defaults.email": "bmarianoleite3@gmail.com",
+  "defaults.state": "São Paulo",
   "sidebar.home": "HOME",
   "sidebar.portfolio": "PORTIOLIO",
   "sidebar.contact": "CONTACT",

@@ -57,10 +57,14 @@
 
 .map-wrap {
   background: rgba(8, 253, 216, 0.1);
-  float: right;
-  width: 53%;
-  height: 115%;
-  margin-top: -3%;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  // padding-top: 35vh;
+  margin-left: 0;
+  position: absolute;
+  // overflow: hidden;
 }
 
 .leaflet-container {
@@ -76,7 +80,7 @@
   position: absolute;
   background: var(--secondary-color);
   top: 50px;
-  right: 30%;
+  right: 0;
   z-index: 999999;
   width: 267px;
   padding: 20px;
@@ -102,16 +106,39 @@
     .map-wrap {
       float: none;
       margin: 0;
-      width: 100%;
+      margin-left: -20px;
+      width: 100vw;
       height: 400px;
+      position: relative;
+      top: 20px;
+      right: 0;
+      box-sizing: border-box;
+      left: 0;
     }
 
     .info-map {
-      display: none;
+      top: 0;
+      float: right;
     }
 
     .flat-button {
       margin-top: 10px;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .stage-cube-cont {
+    width: 90% !important;
+    height: 400px;
+    float: none;
+    display: block;
+    margin: 0 auto 70px auto;
+    position: relative;
+    top: 20px;
+    right: 0;
+    box-sizing: border-box;
+    left: 0;
+    padding-top: 18%;
   }
 }

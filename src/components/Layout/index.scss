@@ -27,11 +27,11 @@
 .container {
   width: 100%;
   will-change: contents;
-  height: 90%;
-  min-height: 566px;
-  position: absolute;
+  // height: 90%;
+  min-height: 100%;
+  // position: absolute;
   opacity: 0;
-  top: 5%;
+  // top: 5%;
   margin: 0 auto;
   z-index: 1;
   .page {

@@ -13,7 +13,13 @@ export const getPortfolioItems = createAsyncThunk(
   async (i, thunkAPI) => {
     try {
       const querySnapshot = await getDocs(collection(db, 'portfolio'))
-      return querySnapshot.docs.map((doc) => doc.data())
+      var sortedPortfolio = Array(querySnapshot.docs.length)
+      querySnapshot.docs
+        .map((doc) => doc.data())
+        .forEach((item) => {
+          sortedPortfolio[item.position] = item
+        })
+      return sortedPortfolio
     } catch (error) {
       return thunkAPI.rejectWithValue('sorry, something went wrong')
     }
