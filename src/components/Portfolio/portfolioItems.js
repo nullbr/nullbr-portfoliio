@@ -5,27 +5,29 @@ const PortfolioItems = ({ portfolio }) => {
 
   return (
     <div className="images-container">
-      {portfolio.map((port, idx) => {
+      {portfolio.map((port) => {
+        const { name, image, url, repo_url, description_en, description_pt } =
+          port.data
         let description =
-          i18n.language === 'en' ? port.description_en : port.description_pt
+          i18n.language === 'en' ? description_en : description_pt
 
         return (
-          <div className="image-box" key={idx}>
-            <img src={port.image} className="portfolio-image" alt="portfolio" />
+          <div className="image-box" key={port.id}>
+            <img src={image} className="portfolio-image" alt="portfolio" />
             <div className="content">
-              <p className="title">{port.name}</p>
+              <p className="title">{name}</p>
               <h4 className="description">{description}</h4>
               <button
-                hidden={port.url ? '' : 'hidden'}
+                hidden={url ? '' : 'hidden'}
                 className="btn"
-                onClick={() => window.open(port.url)}
+                onClick={() => window.open(url)}
               >
                 {t('portfolio.view')}
               </button>
               <button
-                hidden={port.repo_url ? '' : 'hidden'}
+                hidden={repo_url ? '' : 'hidden'}
                 className="btn"
-                onClick={() => window.open(port.repo_url)}
+                onClick={() => window.open(repo_url)}
               >
                 {t('portfolio.github')}
               </button>

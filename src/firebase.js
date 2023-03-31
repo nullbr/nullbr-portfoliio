@@ -37,7 +37,7 @@ export const signInWithGoogle = () => signInWithPopup(auth, provider)
 export const createProject = async (portfolio) => {
   try {
     await setDoc(doc(db, 'portfolio', portfolio.name), portfolio)
-    alert('Successfully added to portfolio')
+    // alert('Successfully added to portfolio')
     return true
   } catch (error) {
     console.log(error)

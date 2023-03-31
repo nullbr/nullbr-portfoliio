@@ -6,6 +6,8 @@ const initialState = {
   portfolioItems: [],
   isLoading: true,
   showForm: false,
+  itemsCount: 0,
+  isModified: false,
 }
 
 export const getPortfolioItems = createAsyncThunk(
@@ -14,10 +16,13 @@ export const getPortfolioItems = createAsyncThunk(
     try {
       const querySnapshot = await getDocs(collection(db, 'portfolio'))
       var sortedPortfolio = Array(querySnapshot.docs.length)
+
       querySnapshot.docs
-        .map((doc) => doc.data())
+        .map((doc) => {
+          return { id: doc.id, data: doc.data() }
+        })
         .forEach((item) => {
-          sortedPortfolio[item.position] = item
+          sortedPortfolio[item.data.position - 1] = item
         })
       return sortedPortfolio
     } catch (error) {
@@ -33,9 +38,32 @@ const portfolioSlice = createSlice({
     showForm: (state) => {
       state.showForm = true
     },
-
     hideForm: (state) => {
       state.showForm = false
+    },
+    moveUp: (state, action) => {
+      const item = state.portfolioItems[action.payload]
+      item.data.position = parseInt(item.data.position) - 1
+      state.isModified = true
+    },
+    moveDown: (state, action) => {
+      const item = state.portfolioItems[action.payload]
+      item.data.position = parseInt(item.data.position) + 1
+      state.isModified = true
+    },
+    sortPortfolio: (state) => {
+      const items = state.portfolioItems
+      var sortedPortfolio = Array(items.length)
+
+      items.forEach((item) => {
+        sortedPortfolio[parseInt(item.data.position) - 1] = item
+      })
+
+      state.portfolioItems = sortedPortfolio
+      state.isModified = true
+    },
+    notModified: (state) => {
+      state.isModified = false
     },
   },
   extraReducers: (builder) => {
@@ -45,16 +73,23 @@ const portfolioSlice = createSlice({
       })
       .addCase(getPortfolioItems.fulfilled, (state, action) => {
         state.isLoading = false
+        state.itemsCount = action.payload.length
         state.portfolioItems = action.payload
       })
       .addCase(getPortfolioItems.rejected, (state, action) => {
-        console.log(action)
         state.isLoading = false
         alert(state.payload)
       })
   },
 })
 
-export const { showForm, hideForm } = portfolioSlice.actions
+export const {
+  showForm,
+  hideForm,
+  moveUp,
+  moveDown,
+  sortPortfolio,
+  notModified,
+} = portfolioSlice.actions
 
 export default portfolioSlice.reducer

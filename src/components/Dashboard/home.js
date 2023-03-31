@@ -5,15 +5,12 @@ import List from './list'
 import { useEffect } from 'react'
 import {
   getPortfolioItems,
-  showForm,
   hideForm,
 } from '../../features/portfolio/portfolioSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Home = () => {
-  const { portfolioItems, isLoading, showForm } = useSelector(
-    (store) => store.portfolio
-  )
+  const { showForm } = useSelector((store) => store.portfolio)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -38,7 +35,11 @@ const Home = () => {
       (snapshot) => {
         getDownloadURL(snapshot.ref).then(
           (downloadUrl) => {
-            createProject({ ...newItem, image: downloadUrl })
+            createProject({
+              ...newItem,
+              image: downloadUrl,
+              position: parseInt(newItem.position),
+            })
             dispatch(getPortfolioItems())
             dispatch(hideForm())
           },
@@ -58,12 +59,7 @@ const Home = () => {
   return (
     <>
       <div className="list-container">
-        <List
-          auth={auth}
-          portfolioItems={portfolioItems}
-          isLoading={isLoading}
-          dispatch={dispatch}
-        />
+        <List auth={auth} />
       </div>
       {showForm && (
         <div className="form-container">
