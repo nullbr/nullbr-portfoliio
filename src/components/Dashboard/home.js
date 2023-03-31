@@ -56,6 +56,8 @@ const Home = () => {
     e.currentTarget.reset()
   }
 
+  const saveItem = () => {}
+
   return (
     <>
       <div className="list-container">
@@ -63,7 +65,7 @@ const Home = () => {
       </div>
       {showForm && (
         <div className="form-container">
-          <Form submitPortfolio={submitPortfolio} />
+          <Form saveItem={saveItem} />
         </div>
       )}
     </>

@@ -8,6 +8,7 @@ const initialState = {
   showForm: false,
   itemsCount: 0,
   isModified: false,
+  formData: {},
 }
 
 export const getPortfolioItems = createAsyncThunk(
@@ -38,6 +39,10 @@ const portfolioSlice = createSlice({
     showForm: (state) => {
       state.showForm = true
     },
+    showEditForm: (state, { payload }) => {
+      state.showForm = true
+      state.formData = state.portfolioItems[payload].data
+    },
     hideForm: (state) => {
       state.showForm = false
     },
@@ -65,6 +70,9 @@ const portfolioSlice = createSlice({
     notModified: (state) => {
       state.isModified = false
     },
+    editItem: (state, action) => {},
+    addItem: (state, action) => {},
+    deleteItem: (state, action) => {},
   },
   extraReducers: (builder) => {
     builder
@@ -85,11 +93,15 @@ const portfolioSlice = createSlice({
 
 export const {
   showForm,
+  showEditForm,
   hideForm,
   moveUp,
   moveDown,
   sortPortfolio,
   notModified,
+  editItem,
+  addItem,
+  deleteItem,
 } = portfolioSlice.actions
 
 export default portfolioSlice.reducer

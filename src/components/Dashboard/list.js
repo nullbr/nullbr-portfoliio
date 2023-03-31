@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp } from '../../assets/icons/icons'
 import {
   moveDown,
   moveUp,
-  showForm,
+  showEditForm,
   sortPortfolio,
   notModified,
 } from '../../features/portfolio/portfolioSlice'
@@ -87,7 +87,13 @@ const Item = ({
         <h4 className="item-description">{description_en}</h4>
         <h4 className="item-description">{description_pt}</h4>
         <div>
-          <button className="delete-btn">Edit</button>
+          <button
+            className="delete-btn"
+            type="button"
+            onClick={() => dispatch(showEditForm(idx))}
+          >
+            Edit
+          </button>
           <button className="delete-btn">Delete</button>
         </div>
       </div>
