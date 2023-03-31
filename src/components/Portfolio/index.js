@@ -4,7 +4,7 @@ import { useAppContext } from '../../context'
 import Title from '../Title'
 import PortfolioItems from './portfolioItems'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPortfolioItems } from '../../features/portfolio/porfolioSlice'
+import { getPortfolioItems } from '../../features/portfolio/portfolioSlice'
 
 const Portfolio = () => {
   const { t, Loader } = useAppContext()

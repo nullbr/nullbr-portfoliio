@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import { getDownloadURL, getStorage, uploadBytes, ref } from 'firebase/storage'
+import { getStorage } from 'firebase/storage'
 import { doc, getFirestore, setDoc } from 'firebase/firestore'
 
 const firebaseConfig = () => {
@@ -44,25 +44,4 @@ export const createProject = async (portfolio) => {
     alert('Failed to add portfolio')
     return false
   }
-}
-
-export const uploadImage = (image) => {
-  const storageRef = ref(storage, `portfolio/${image.name}`)
-  let downUrl = ''
-
-  uploadBytes(storageRef, image).then((snapshot) => {
-    getDownloadURL(snapshot.ref).then(
-      (downloadUrl) => {
-        downUrl = downloadUrl
-      },
-      (error) => {
-        console.log(error)
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
-  })
-
-  return downUrl
 }

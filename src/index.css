@@ -5,6 +5,7 @@
   --quaternary-color: #e9f1fa;
   --sidebar-links: #fff;
   --is-dark-theme: 0;
+  --gray-color: rgb(128, 128, 128);
 }
 
 :root.dark {
@@ -14,6 +15,7 @@
   --quaternary-color: #000;
   --sidebar-links: #fff;
   --is-dark-theme: 1;
+  --gray-color: rgb(128, 128, 128);
 }
 
 html {
@@ -35,6 +37,13 @@ body {
   background-attachment: fixed;
   background-position: right bottom;
   background-size: max(350px, 60vw);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
 }
 
 .dashboard {

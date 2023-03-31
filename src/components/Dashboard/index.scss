@@ -1,4 +1,4 @@
-.buttons-container,
+.list-container,
 .form-container {
   height: 100%;
   width: 50%;
@@ -6,6 +6,18 @@
   flex: 1;
   align-items: center;
 }
+
+.action-button {
+  background: none;
+  margin-right: 1rem;
+}
+
+.section-title h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+// Form
 
 .form-container {
   justify-content: center;
@@ -44,20 +56,87 @@
   }
 }
 
-.submit-button,
-.cancel-button {
-  background: none;
+// Projects List
+
+.list {
+  min-height: fit-content;
+  width: 90%;
+  margin: 0 auto;
 }
 
-// .buttons-container {
-//   //
-// }
+.empty-list {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+// Project Item
+
+.project-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+  }
+
+  h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .item-description {
+    color: var(--gray-color);
+  }
+
+  .delete-btn {
+    color: var(--main-color);
+    cursor: pointer;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    margin-top: 0.5rem;
+    transition: all 0.3s linear;
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+
+  .position-btn {
+    width: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      color: var(--gray-color);
+
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+
+  p.position {
+    text-align: center;
+    margin-top: 0.5rem;
+    max-width: unset;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+}
 
 @media screen and (max-width: 1200px) {
   .container.dashboard-page {
     display: block;
   }
-  .buttons-container,
+  .list-container,
   .form-container {
     width: 100%;
     flex: unset;

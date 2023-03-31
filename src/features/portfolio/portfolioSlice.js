@@ -5,6 +5,7 @@ import { db } from '../../firebase'
 const initialState = {
   portfolioItems: [],
   isLoading: true,
+  showForm: false,
 }
 
 export const getPortfolioItems = createAsyncThunk(
@@ -19,10 +20,18 @@ export const getPortfolioItems = createAsyncThunk(
   }
 )
 
-const porfolioSlice = createSlice({
+const portfolioSlice = createSlice({
   name: 'portfolio',
   initialState,
-  reducers: {},
+  reducers: {
+    showForm: (state) => {
+      state.showForm = true
+    },
+
+    hideForm: (state) => {
+      state.showForm = false
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getPortfolioItems.pending, (state) => {
@@ -40,6 +49,6 @@ const porfolioSlice = createSlice({
   },
 })
 
-// export const {} = portfolioSlice.actions
+export const { showForm, hideForm } = portfolioSlice.actions
 
-export default porfolioSlice.reducer
+export default portfolioSlice.reducer

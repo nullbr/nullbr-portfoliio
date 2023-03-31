@@ -1,8 +1,15 @@
-const Form = ({ submitPortfolio, auth }) => {
+import { useDispatch } from 'react-redux'
+import { hideForm } from '../../features/portfolio/portfolioSlice'
+
+const Form = ({ submitPortfolio }) => {
+  const dispatch = useDispatch()
+
   return (
     <>
       <form onSubmit={submitPortfolio}>
-        <h2>Project Information</h2>
+        <header className="section-title">
+          <h2>Project Information</h2>
+        </header>
         <div className="form-row">
           <input type="text" placeholder="Name" id="name" name="name" />
         </div>
@@ -43,14 +50,15 @@ const Form = ({ submitPortfolio, auth }) => {
           <input type="file" placeholder="Image" id="image" name="image" />
         </div>
 
-        <button className="flat-button submit-button" type="submit">
-          Submit
+        <button className="flat-button action-button" type="submit">
+          save
         </button>
         <button
-          className="flat-button cancel-button"
-          onClick={() => auth.signOut()}
+          className="flat-button action-button"
+          type="button"
+          onClick={() => dispatch(hideForm())}
         >
-          Sign out
+          cancel
         </button>
       </form>
     </>
