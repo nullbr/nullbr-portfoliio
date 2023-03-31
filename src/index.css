@@ -3,7 +3,7 @@
   --secondary-color: #1d1d1d;
   --tertiary-color: #4d4d4e;
   --quaternary-color: #e9f1fa;
-  --sidebar-links: #fff;
+  --white-color: #fff;
   --is-dark-theme: 0;
   --gray-color: rgb(128, 128, 128);
 }
@@ -13,7 +13,7 @@
   --secondary-color: #e9f1fa;
   --tertiary-color: #fff;
   --quaternary-color: #000;
-  --sidebar-links: #fff;
+  --white-color: #fff;
   --is-dark-theme: 1;
   --gray-color: rgb(128, 128, 128);
 }

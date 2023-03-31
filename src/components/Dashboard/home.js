@@ -39,6 +39,8 @@ const Home = () => {
         getDownloadURL(snapshot.ref).then(
           (downloadUrl) => {
             createProject({ ...newItem, image: downloadUrl })
+            dispatch(getPortfolioItems())
+            dispatch(hideForm())
           },
           (error) => {
             console.log(error)

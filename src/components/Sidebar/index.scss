@@ -34,7 +34,7 @@
 
     a {
       font-size: 22px;
-      color: var(--sidebar-links);
+      color: var(--white-color);
       display: block;
       line-height: 51px;
       height: 51px;
@@ -101,7 +101,7 @@
         display: block;
         font-size: 15px;
         line-height: 16px;
-        color: var(--sidebar-links);
+        color: var(--white-color);
       }
 
       &:hover {
@@ -142,7 +142,7 @@
 
   .theme-button {
     font-size: 40px;
-    color: var(--sidebar-links);
+    color: var(--white-color);
 
     svg[data-icon='sun'] {
       color: #ffe87c;
