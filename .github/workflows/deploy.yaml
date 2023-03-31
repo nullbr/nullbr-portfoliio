@@ -1,6 +1,9 @@
 name: CD - DigitalOcean Ubuntu
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -27,5 +30,5 @@ jobs:
           host: ${{ secrets.PROD_UBUNTU_IP }}
           username: ${{ secrets.PROD_UBUNTU_USERNAME }}
           password: ${{ secrets.PROD_UBUNTU_PASSWORD }}
-          source: "./html/"
-          target: "/var/www/bruno.buzz/"
+          source: './html/'
+          target: '/var/www/bruno.buzz/'
