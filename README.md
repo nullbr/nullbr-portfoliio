@@ -1,4 +1,4 @@
-## [Bruno's Portfolio](https://bruno.buzz/)
+## Bruno's Portfolio - [bruno.buzz](https://bruno.buzz/)
 
 Project built with ReactJS, using Firebase for storage and deployed to DigitalOcean server running Ubuntu 20.04 and Nginx
 
