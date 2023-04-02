@@ -70,7 +70,12 @@ const portfolioSlice = createSlice({
     notModified: (state) => {
       state.isModified = false
     },
-    editItem: (state, action) => {},
+    editItem: (state, { payload }) => {
+      const editItem = state.portfolioItems.find(
+        (item) => item.name === payload.name
+      )
+      console.log(editItem)
+    },
     addItem: (state, action) => {},
     deleteItem: (state, action) => {},
   },

@@ -6,6 +6,7 @@ import {
 } from '../../features/portfolio/portfolioSlice'
 import { storage } from '../../firebase'
 import { getDownloadURL, uploadBytes, ref } from 'firebase/storage'
+import { v4 as uuid } from 'uuid'
 
 const Form = () => {
   const dispatch = useDispatch()
@@ -15,15 +16,18 @@ const Form = () => {
     e.preventDefault()
 
     const formData = new FormData(e.currentTarget)
-    const item = Object.fromEntries(formData)
+    const item = { ...Object.fromEntries(formData), id: uuid() }
     const imageFile = item.image_file
+    console.log(item)
+    delete item['image_file']
+
     const storageRef = ref(storage, `portfolio/${imageFile.name}`)
 
-    if (!item.image || !imageFile) {
+    if (!item.image && !imageFile.name) {
       alert('Please upload an image')
       return
-    } else if (imageFile) {
-      item.image = ''
+    } else if (imageFile.name !== '') {
+      console.log('upload')
       uploadBytes(storageRef, imageFile).then(
         (snapshot) => {
           getDownloadURL(snapshot.ref).then(
@@ -41,6 +45,7 @@ const Form = () => {
         }
       )
     } else {
+      console.log('no upload')
       addOrEdit(item)
     }
 
@@ -48,7 +53,7 @@ const Form = () => {
   }
 
   const addOrEdit = (item) => {
-    if (formData === {}) {
+    if (formData !== {}) {
       dispatch(editItem(item))
     } else {
       dispatch(addItem(item))
@@ -61,6 +66,7 @@ const Form = () => {
         <header className="section-title">
           <h2>Project Information</h2>
         </header>
+
         <div className="form-row">
           <input
             type="text"
@@ -122,14 +128,13 @@ const Form = () => {
           />
         </div>
 
-        <div hidden="hidden">
-          <input
-            type="text"
-            id="image"
-            name="image"
-            defaultValue={formData.image}
-          />
-        </div>
+        <input
+          hidden="hidden"
+          type="text"
+          id="image"
+          name="image"
+          defaultValue={formData.image}
+        />
 
         <button className="flat-button action-button" type="submit">
           save
