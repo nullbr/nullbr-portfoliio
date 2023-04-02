@@ -7,6 +7,8 @@ import {
   sortPortfolio,
   notModified,
   showAddForm,
+  deleteItem,
+  deleteAll,
 } from '../../features/portfolio/portfolioSlice'
 import { createProject } from '../../firebase'
 
@@ -16,7 +18,7 @@ const List = ({ auth }) => {
   )
   const dispatch = useDispatch()
 
-  console.log(portfolioItems)
+  // console.log(portfolioItems.length())/
 
   const saveChanges = () => {
     portfolioItems.forEach((item) => {
@@ -61,7 +63,15 @@ const List = ({ auth }) => {
         >
           Add Project
         </button>
-        <button className="flat-button action-button">Delete All</button>
+        {portfolioItems.length > 0 && (
+          <button
+            className="flat-button action-button"
+            type="button"
+            onClick={() => dispatch(deleteAll())}
+          >
+            Delete All
+          </button>
+        )}
         <button
           className="flat-button action-button"
           onClick={() => auth.signOut()}
@@ -75,6 +85,7 @@ const List = ({ auth }) => {
 
 const Item = ({
   idx,
+  id,
   image,
   name,
   description_en,
@@ -98,7 +109,13 @@ const Item = ({
           >
             Edit
           </button>
-          <button className="delete-btn">Delete</button>
+          <button
+            className="delete-btn"
+            type="button"
+            onClick={() => dispatch(deleteItem(id))}
+          >
+            Delete
+          </button>
         </div>
       </div>
       <div>

@@ -95,7 +95,20 @@ const portfolioSlice = createSlice({
       state.formData = {}
       state.showForm = false
     },
-    deleteItem: (state, action) => {},
+    deleteItem: (state, { payload }) => {
+      state.portfolioItems = state.portfolioItems.filter(
+        (item) => item.id !== payload
+      )
+      state.isModified = true
+      state.formData = {}
+      state.showForm = false
+    },
+    deleteAll: (state) => {
+      state.portfolioItems = []
+      state.isModified = true
+      state.formData = {}
+      state.showForm = false
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -125,6 +138,7 @@ export const {
   editItem,
   addItem,
   deleteItem,
+  deleteAll,
 } = portfolioSlice.actions
 
 export default portfolioSlice.reducer
