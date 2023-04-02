@@ -14,9 +14,10 @@ const List = ({ auth }) => {
     useSelector((store) => store.portfolio)
   const dispatch = useDispatch()
 
+  console.log(portfolioItems)
   const saveChanges = () => {
     portfolioItems.forEach((item) => {
-      if (createProject({ ...item.data })) {
+      if (createProject(item)) {
         dispatch(notModified())
       }
     })
@@ -33,7 +34,7 @@ const List = ({ auth }) => {
             <Item
               key={item.id}
               idx={idx}
-              {...item.data}
+              {...item}
               dispatch={dispatch}
               itemsCount={itemsCount}
             />

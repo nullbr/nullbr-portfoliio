@@ -6,7 +6,6 @@ import {
 } from '../../features/portfolio/portfolioSlice'
 import { storage } from '../../firebase'
 import { getDownloadURL, uploadBytes, ref } from 'firebase/storage'
-import { v4 as uuid } from 'uuid'
 
 const Form = () => {
   const dispatch = useDispatch()
@@ -16,9 +15,9 @@ const Form = () => {
     e.preventDefault()
 
     const formData = new FormData(e.currentTarget)
-    const item = { ...Object.fromEntries(formData), id: uuid() }
+    const item = Object.fromEntries(formData)
     const imageFile = item.image_file
-    console.log(item)
+
     delete item['image_file']
 
     const storageRef = ref(storage, `portfolio/${imageFile.name}`)
@@ -66,6 +65,14 @@ const Form = () => {
         <header className="section-title">
           <h2>Project Information</h2>
         </header>
+
+        <input
+          hidden="hidden"
+          type="text"
+          id="id"
+          name="id"
+          defaultValue={formData.id}
+        />
 
         <div className="form-row">
           <input

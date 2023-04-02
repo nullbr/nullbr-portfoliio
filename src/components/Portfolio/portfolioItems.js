@@ -7,7 +7,7 @@ const PortfolioItems = ({ portfolio }) => {
     <div className="images-container">
       {portfolio.map((port) => {
         const { name, image, url, repo_url, description_en, description_pt } =
-          port.data
+          port
         let description =
           i18n.language === 'en' ? description_en : description_pt
 
