@@ -6,15 +6,18 @@ import {
   showEditForm,
   sortPortfolio,
   notModified,
+  showAddForm,
 } from '../../features/portfolio/portfolioSlice'
 import { createProject } from '../../firebase'
 
 const List = ({ auth }) => {
-  const { portfolioItems, isLoading, showForm, itemsCount, isModified } =
-    useSelector((store) => store.portfolio)
+  const { portfolioItems, isLoading, itemsCount, isModified } = useSelector(
+    (store) => store.portfolio
+  )
   const dispatch = useDispatch()
 
   console.log(portfolioItems)
+
   const saveChanges = () => {
     portfolioItems.forEach((item) => {
       if (createProject(item)) {
@@ -54,7 +57,7 @@ const List = ({ auth }) => {
         <button
           className="flat-button action-button"
           type="button"
-          onClick={() => dispatch(showForm())}
+          onClick={() => dispatch(showAddForm())}
         >
           Add Project
         </button>

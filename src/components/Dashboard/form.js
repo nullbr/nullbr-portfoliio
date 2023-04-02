@@ -17,10 +17,9 @@ const Form = () => {
     const formData = new FormData(e.currentTarget)
     const item = Object.fromEntries(formData)
     const imageFile = item.image_file
+    const storageRef = ref(storage, `portfolio/${imageFile.name}`)
 
     delete item['image_file']
-
-    const storageRef = ref(storage, `portfolio/${imageFile.name}`)
 
     if (!item.image && !imageFile.name) {
       alert('Please upload an image')
@@ -52,10 +51,12 @@ const Form = () => {
   }
 
   const addOrEdit = (item) => {
-    if (formData !== {}) {
-      dispatch(editItem(item))
-    } else {
+    if (Object.keys(formData).length === 0 && formData.constructor === Object) {
+      console.log('add')
       dispatch(addItem(item))
+    } else {
+      console.log('edit')
+      dispatch(editItem(item))
     }
   }
 
@@ -81,6 +82,7 @@ const Form = () => {
             id="name"
             name="name"
             defaultValue={formData.name}
+            required
           />
         </div>
         <div className="form-row">
@@ -89,6 +91,7 @@ const Form = () => {
             id="description_en"
             name="description_en"
             defaultValue={formData.description_en}
+            required
           />
         </div>
         <div className="form-row">
@@ -97,6 +100,7 @@ const Form = () => {
             id="description_pt"
             name="description_pt"
             defaultValue={formData.description_pt}
+            required
           />
         </div>
         <div className="form-row">
@@ -106,6 +110,7 @@ const Form = () => {
             id="url"
             name="url"
             defaultValue={formData.url}
+            required
           />
         </div>
         <div className="form-row">
@@ -115,6 +120,7 @@ const Form = () => {
             id="repo_url"
             name="repo_url"
             defaultValue={formData.repo_url}
+            required
           />
         </div>
         <div className="form-row">
@@ -124,6 +130,7 @@ const Form = () => {
             id="position"
             name="position"
             defaultValue={formData.position}
+            required
           />
         </div>
         <div className="form-row">

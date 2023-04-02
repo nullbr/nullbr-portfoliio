@@ -37,7 +37,7 @@ const portfolioSlice = createSlice({
   name: 'portfolio',
   initialState,
   reducers: {
-    showForm: (state) => {
+    showAddForm: (state) => {
       state.showForm = true
     },
     showEditForm: (state, { payload }) => {
@@ -68,6 +68,7 @@ const portfolioSlice = createSlice({
 
       state.portfolioItems = sortedPortfolio
       state.isModified = true
+      state.itemsCount = state.portfolioItems.length()
     },
     notModified: (state) => {
       state.isModified = false
@@ -84,10 +85,15 @@ const portfolioSlice = createSlice({
       state.showForm = false
     },
     addItem: (state, { payload }) => {
-      state.portfolioItems = state.portfolioItems.push({
+      var items = state.portfolioItems
+      items.push({
         ...payload,
         id: uuid(),
       })
+      state.portfolioItems = items
+      state.isModified = true
+      state.formData = {}
+      state.showForm = false
     },
     deleteItem: (state, action) => {},
   },
@@ -109,7 +115,7 @@ const portfolioSlice = createSlice({
 })
 
 export const {
-  showForm,
+  showAddForm,
   showEditForm,
   hideForm,
   moveUp,
