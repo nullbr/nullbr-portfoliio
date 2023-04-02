@@ -1,12 +1,8 @@
-import { auth, createProject, storage } from '../../firebase'
-import { getDownloadURL, uploadBytes, ref } from 'firebase/storage'
+import { auth } from '../../firebase'
 import Form from './form'
 import List from './list'
 import { useEffect } from 'react'
-import {
-  getPortfolioItems,
-  hideForm,
-} from '../../features/portfolio/portfolioSlice'
+import { getPortfolioItems } from '../../features/portfolio/portfolioSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Home = () => {
@@ -17,44 +13,44 @@ const Home = () => {
     dispatch(getPortfolioItems())
   }, [dispatch])
 
-  const submitPortfolio = (e) => {
-    e.preventDefault()
+  // const submitPortfolio = (e) => {
+  //   e.preventDefault()
 
-    const formData = new FormData(e.currentTarget)
-    const newItem = Object.fromEntries(formData)
-    const projectImage = newItem.image
+  //   const formData = new FormData(e.currentTarget)
+  //   const newItem = Object.fromEntries(formData)
+  //   const projectImage = newItem.image
 
-    if (!projectImage) {
-      alert('Please upload an image')
-      return
-    }
+  //   if (!projectImage) {
+  //     alert('Please upload an image')
+  //     return
+  //   }
 
-    const storageRef = ref(storage, `portfolio/${projectImage.name}`)
+  //   const storageRef = ref(storage, `portfolio/${projectImage.name}`)
 
-    uploadBytes(storageRef, projectImage).then(
-      (snapshot) => {
-        getDownloadURL(snapshot.ref).then(
-          (downloadUrl) => {
-            createProject({
-              ...newItem,
-              image: downloadUrl,
-              position: parseInt(newItem.position),
-            })
-            dispatch(getPortfolioItems())
-            dispatch(hideForm())
-          },
-          (error) => {
-            console.log(error)
-          }
-        )
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
+  //   uploadBytes(storageRef, projectImage).then(
+  //     (snapshot) => {
+  //       getDownloadURL(snapshot.ref).then(
+  //         (downloadUrl) => {
+  //           createProject({
+  //             ...newItem,
+  //             image: downloadUrl,
+  //             position: parseInt(newItem.position),
+  //           })
+  //           dispatch(getPortfolioItems())
+  //           dispatch(hideForm())
+  //         },
+  //         (error) => {
+  //           console.log(error)
+  //         }
+  //       )
+  //     },
+  //     (error) => {
+  //       console.log(error)
+  //     }
+  //   )
 
-    e.currentTarget.reset()
-  }
+  //   e.currentTarget.reset()
+  // }
 
   const saveItem = () => {}
 
