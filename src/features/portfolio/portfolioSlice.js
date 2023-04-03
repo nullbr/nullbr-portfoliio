@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase'
+import { v4 as uuid } from 'uuid'
 
 const initialState = {
   portfolioItems: [],
@@ -9,6 +10,7 @@ const initialState = {
   itemsCount: 0,
   isModified: false,
   formData: {},
+  user: null,
 }
 
 export const getPortfolioItems = createAsyncThunk(
@@ -20,10 +22,10 @@ export const getPortfolioItems = createAsyncThunk(
 
       querySnapshot.docs
         .map((doc) => {
-          return { id: doc.id, data: doc.data() }
+          return doc.data()
         })
         .forEach((item) => {
-          sortedPortfolio[item.data.position - 1] = item
+          sortedPortfolio[item.position - 1] = item
         })
       return sortedPortfolio
     } catch (error) {
@@ -36,24 +38,28 @@ const portfolioSlice = createSlice({
   name: 'portfolio',
   initialState,
   reducers: {
-    showForm: (state) => {
+    setUser: (state, { payload }) => {
+      state.user = payload
+    },
+    showAddForm: (state) => {
       state.showForm = true
     },
     showEditForm: (state, { payload }) => {
       state.showForm = true
-      state.formData = state.portfolioItems[payload].data
+      state.formData = state.portfolioItems[payload]
     },
     hideForm: (state) => {
       state.showForm = false
+      state.formData = {}
     },
     moveUp: (state, action) => {
       const item = state.portfolioItems[action.payload]
-      item.data.position = parseInt(item.data.position) - 1
+      item.position = parseInt(item.position) - 1
       state.isModified = true
     },
     moveDown: (state, action) => {
       const item = state.portfolioItems[action.payload]
-      item.data.position = parseInt(item.data.position) + 1
+      item.position = parseInt(item.position) + 1
       state.isModified = true
     },
     sortPortfolio: (state) => {
@@ -61,23 +67,52 @@ const portfolioSlice = createSlice({
       var sortedPortfolio = Array(items.length)
 
       items.forEach((item) => {
-        sortedPortfolio[parseInt(item.data.position) - 1] = item
+        sortedPortfolio[parseInt(item.position) - 1] = item
       })
 
       state.portfolioItems = sortedPortfolio
       state.isModified = true
+      state.itemsCount = state.portfolioItems.length
     },
     notModified: (state) => {
       state.isModified = false
     },
     editItem: (state, { payload }) => {
-      const editItem = state.portfolioItems.find(
-        (item) => item.name === payload.name
-      )
-      console.log(editItem)
+      state.portfolioItems = state.portfolioItems.map((item) => {
+        if (item.id === payload.id) {
+          return { ...payload }
+        }
+        return { ...item }
+      })
+      state.isModified = true
+      state.formData = {}
+      state.showForm = false
     },
-    addItem: (state, action) => {},
-    deleteItem: (state, action) => {},
+    addItem: (state, { payload }) => {
+      var items = state.portfolioItems
+      items.push({
+        ...payload,
+        id: uuid(),
+      })
+      state.portfolioItems = items
+      state.isModified = true
+      state.formData = {}
+      state.showForm = false
+    },
+    deleteItem: (state, { payload }) => {
+      state.portfolioItems = state.portfolioItems.filter(
+        (item) => item.id !== payload
+      )
+      state.isModified = true
+      state.formData = {}
+      state.showForm = false
+    },
+    deleteAll: (state) => {
+      state.portfolioItems = []
+      state.isModified = true
+      state.formData = {}
+      state.showForm = false
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -97,7 +132,8 @@ const portfolioSlice = createSlice({
 })
 
 export const {
-  showForm,
+  setUser,
+  showAddForm,
   showEditForm,
   hideForm,
   moveUp,
@@ -107,6 +143,7 @@ export const {
   editItem,
   addItem,
   deleteItem,
+  deleteAll,
 } = portfolioSlice.actions
 
 export default portfolioSlice.reducer

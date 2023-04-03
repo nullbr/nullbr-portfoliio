@@ -133,6 +133,11 @@
   }
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1200px) {
   .container.dashboard-page {
     display: block;

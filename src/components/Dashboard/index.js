@@ -1,27 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import Home from './home'
-import Login from '../Login'
 import Loader from 'react-loaders'
 import './index.scss'
+import { useDispatch } from 'react-redux'
+import {
+  getPortfolioItems,
+  setUser,
+} from '../../features/portfolio/portfolioSlice'
 
 const Dashboard = () => {
-  const [user, setUser] = useState(null)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const auth = getAuth()
+    console.log('sign in')
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user)
-      } else {
-        setUser(null)
-      }
+      user ? dispatch(setUser(user.uid)) : dispatch(setUser(null))
     })
-  }, [])
+  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(getPortfolioItems())
+  }, [dispatch])
 
   return (
     <div className="container dashboard-page">
-      {user ? <Home /> : <Login />}
+      <Home />
       <Loader type="pacman" />
     </div>
   )
