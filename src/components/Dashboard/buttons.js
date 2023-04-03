@@ -2,44 +2,42 @@ import {
   showAddForm,
   deleteAll,
   notModified,
+  toggleLoading,
 } from '../../features/portfolio/portfolioSlice'
-import { auth, createProject } from '../../firebase'
+import { auth, createProject, deleteProject } from '../../firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { signInWithGoogle } from '../../firebase'
 
 const Buttons = () => {
   const dispatch = useDispatch()
-  const { portfolioItems, isModified, user } = useSelector(
+  const { portfolioItems, isModified, user, deletedItems } = useSelector(
     (store) => store.portfolio
   )
 
   const saveChanges = () => {
+    dispatch(toggleLoading())
     portfolioItems.forEach((item) => {
-      if (createProject(item)) {
-        dispatch(notModified())
-      }
+      createProject(item)
     })
+    deletedItems.forEach((item) => {
+      deleteProject(item)
+    })
+    dispatch(notModified())
+    dispatch(toggleLoading())
   }
 
   return (
     <>
-      {isModified && user && (
+      {user && (
         <button
           className="flat-button action-button"
           type="button"
-          onClick={() => saveChanges()}
+          onClick={() => dispatch(showAddForm())}
         >
-          Save Changes
+          Add Project
         </button>
       )}
-      <button
-        className="flat-button action-button"
-        type="button"
-        onClick={() => dispatch(showAddForm())}
-      >
-        Add Project
-      </button>
-      {portfolioItems.length > 0 && (
+      {user && portfolioItems.length > 0 && (
         <button
           className="flat-button action-button"
           type="button"
@@ -61,6 +59,15 @@ const Buttons = () => {
           onClick={signInWithGoogle}
         >
           Log in
+        </button>
+      )}
+      {isModified && user && (
+        <button
+          className="flat-button action-button"
+          type="button"
+          onClick={() => saveChanges()}
+        >
+          Save Changes
         </button>
       )}
     </>

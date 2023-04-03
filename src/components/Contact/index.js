@@ -84,11 +84,17 @@ const Contact = () => {
         </div>
         <div className="map-wrap">
           <div className="info-map">
-            {t('defaults.state')},
-            <br />
-            {t('contact.brazil')}
-            <br />
-            <span>{t('defaults.email')}</span>
+            <p>
+              {t('defaults.state')},
+              <br />
+              {t('contact.brazil')}
+              <br />
+              <a href={'mailto:' + t('defaults.email')}>
+                {t('defaults.email')}
+              </a>
+              <br />
+              <a href={'tel:' + t('defaults.phone')}>{t('defaults.phone')}</a>
+            </p>
           </div>
           <MapContainer center={[-23.599034, -48.486063]} zoom={9}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
