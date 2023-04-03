@@ -346,10 +346,10 @@ input[type='email'],
 input[type='number'] {
   width: 100%;
   border: 0;
-  background: var(--white-color);
+  background: var(--form-bkg);
   height: 50px;
   font-size: 16px;
-  color: var(--quaternary-color);
+  color: var(--form-text);
   padding: 0 20px;
   box-sizing: border-box;
 }
@@ -357,10 +357,10 @@ input[type='number'] {
 textarea {
   width: 100%;
   border: 0;
-  background: var(--white-color);
+  background: var(--form-bkg);
   height: 50px;
   font-size: 16px;
-  color: var(--quaternary-color);
+  color: var(--form-text);
   padding: 20px;
   box-sizing: border-box;
   min-height: 150px;

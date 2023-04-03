@@ -1,21 +1,29 @@
-:root.light {
+:root {
   --main-color: #0093b9;
+}
+
+:root.light {
   --secondary-color: #1d1d1d;
   --tertiary-color: #4d4d4e;
-  --black-color: #02070c;
+  --quaternary-color: #e9f1fa;
   --white-color: #fff;
   --is-dark-theme: 0;
   --gray-color: rgb(128, 128, 128);
+  --background-color: #e9f1fa;
+  --form-text: #1d1d1d;
+  --form-bkg: #fff;
 }
 
 :root.dark {
-  --main-color: #0093b9;
   --secondary-color: #e9f1fa;
   --tertiary-color: #fff;
-  --quaternary-color: #02070c;
+  --quaternary-color: #000;
   --white-color: #fff;
   --is-dark-theme: 1;
   --gray-color: rgb(128, 128, 128);
+  --background-color: #000;
+  --form-text: #1d1d1d;
+  --form-bkg: #e9f1fa;
 }
 
 html {
@@ -28,7 +36,7 @@ body {
   color: var(--tertiary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--quaternary-color);
+  background: var(--background-color);
   overflow: visible;
   display: block;
 

@@ -78,25 +78,26 @@
 
 .info-map {
   position: absolute;
-  background: var(--white-color);
+  background: var(--background-color);
   top: 50px;
   right: 0;
   z-index: 999999;
   width: 267px;
-  padding: 20px;
-  color: var(--quaternary-color);
-  font-family: 'Helvetica';
-  font-size: 17px;
-  font-weight: 300;
+  padding: 10px 0 10px 30px;
   opacity: 0;
   animation: fadeIn 1s 1.5s;
   animation-fill-mode: forwards;
 
-  span {
+  a {
     font-size: 16px;
+    text-decoration: none;
 
-    span {
+    &:link {
       color: var(--main-color);
+    }
+
+    &:hover {
+      color: var(--tertiary-color);
     }
   }
 }
