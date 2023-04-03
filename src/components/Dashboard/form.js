@@ -3,13 +3,14 @@ import {
   addItem,
   editItem,
   hideForm,
+  sortPortfolio,
 } from '../../features/portfolio/portfolioSlice'
 import { storage } from '../../firebase'
 import { getDownloadURL, uploadBytes, ref } from 'firebase/storage'
 
 const Form = () => {
   const dispatch = useDispatch()
-  const { formData } = useSelector((store) => store.portfolio)
+  const { formData, itemsCount } = useSelector((store) => store.portfolio)
 
   const saveItem = (e) => {
     e.preventDefault()
@@ -58,6 +59,7 @@ const Form = () => {
       console.log('edit')
       dispatch(editItem(item))
     }
+    dispatch(sortPortfolio())
   }
 
   return (
@@ -129,7 +131,9 @@ const Form = () => {
             placeholder="Position"
             id="position"
             name="position"
-            defaultValue={formData.position}
+            defaultValue={formData.position || itemsCount + 1}
+            max={itemsCount + 1}
+            min="1"
             required
           />
         </div>

@@ -14,7 +14,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     const auth = getAuth()
-    console.log('sign in')
     onAuthStateChanged(auth, (user) => {
       user ? dispatch(setUser(user.uid)) : dispatch(setUser(null))
     })

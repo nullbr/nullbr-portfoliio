@@ -5,6 +5,9 @@ import { v4 as uuid } from 'uuid'
 
 const initialState = {
   portfolioItems: [],
+  deletedItems: [],
+  updatedItems: [],
+  newItems: [],
   isLoading: true,
   showForm: false,
   itemsCount: 0,
@@ -43,6 +46,7 @@ const portfolioSlice = createSlice({
     },
     showAddForm: (state) => {
       state.showForm = true
+      state.formData = {}
     },
     showEditForm: (state, { payload }) => {
       state.showForm = true
@@ -80,7 +84,11 @@ const portfolioSlice = createSlice({
     editItem: (state, { payload }) => {
       state.portfolioItems = state.portfolioItems.map((item) => {
         if (item.id === payload.id) {
+          // edit item
           return { ...payload }
+        } else if (item.position >= payload.position) {
+          // correct positioning of items with lower positioning
+          return { ...item, position: parseInt(item.position) + 1 }
         }
         return { ...item }
       })
@@ -89,29 +97,48 @@ const portfolioSlice = createSlice({
       state.showForm = false
     },
     addItem: (state, { payload }) => {
-      var items = state.portfolioItems
-      items.push({
-        ...payload,
-        id: uuid(),
+      // correct positioning of items with lower positioning
+      state.portfolioItems = state.portfolioItems.map((item) => {
+        if (item.position >= payload.position) {
+          return { ...item, position: parseInt(item.position) + 1 }
+        }
+        return { ...item }
       })
-      state.portfolioItems = items
+      // add item to array
+      state.portfolioItems.push({ ...payload, id: uuid() })
       state.isModified = true
       state.formData = {}
       state.showForm = false
     },
     deleteItem: (state, { payload }) => {
-      state.portfolioItems = state.portfolioItems.filter(
-        (item) => item.id !== payload
+      const deletedItem = state.portfolioItems.find(
+        (item) => item.id === payload
       )
+      // add item to deleted list
+      state.deletedItems.push(deletedItem)
+      // remove from array
+      state.portfolioItems = state.portfolioItems.filter(
+        (item) => item.id !== deletedItem.id
+      )
+      // correct positioning of items with lower positioning
+      state.portfolioItems = state.portfolioItems.map((item) => {
+        if (item.position >= deletedItem.position) {
+          return { ...item, position: parseInt(item.position) - 1 }
+        }
+        return { ...item }
+      })
       state.isModified = true
       state.formData = {}
       state.showForm = false
+      state.itemsCount = state.portfolioItems.length
     },
     deleteAll: (state) => {
+      state.deletedItems = state.deletedItems.concat(state.portfolioItems)
       state.portfolioItems = []
       state.isModified = true
       state.formData = {}
       state.showForm = false
+      state.itemsCount = 0
     },
   },
   extraReducers: (builder) => {

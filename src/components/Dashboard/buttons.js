@@ -23,23 +23,16 @@ const Buttons = () => {
 
   return (
     <>
-      {isModified && user && (
+      {user && (
         <button
           className="flat-button action-button"
           type="button"
-          onClick={() => saveChanges()}
+          onClick={() => dispatch(showAddForm())}
         >
-          Save Changes
+          Add Project
         </button>
       )}
-      <button
-        className="flat-button action-button"
-        type="button"
-        onClick={() => dispatch(showAddForm())}
-      >
-        Add Project
-      </button>
-      {portfolioItems.length > 0 && (
+      {user && portfolioItems.length > 0 && (
         <button
           className="flat-button action-button"
           type="button"
@@ -61,6 +54,15 @@ const Buttons = () => {
           onClick={signInWithGoogle}
         >
           Log in
+        </button>
+      )}
+      {isModified && user && (
+        <button
+          className="flat-button action-button"
+          type="button"
+          onClick={() => saveChanges()}
+        >
+          Save Changes
         </button>
       )}
     </>
