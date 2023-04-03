@@ -10,6 +10,7 @@ const initialState = {
   itemsCount: 0,
   isModified: false,
   formData: {},
+  user: null,
 }
 
 export const getPortfolioItems = createAsyncThunk(
@@ -37,6 +38,9 @@ const portfolioSlice = createSlice({
   name: 'portfolio',
   initialState,
   reducers: {
+    setUser: (state, { payload }) => {
+      state.user = payload
+    },
     showAddForm: (state) => {
       state.showForm = true
     },
@@ -68,7 +72,7 @@ const portfolioSlice = createSlice({
 
       state.portfolioItems = sortedPortfolio
       state.isModified = true
-      state.itemsCount = state.portfolioItems.length()
+      state.itemsCount = state.portfolioItems.length
     },
     notModified: (state) => {
       state.isModified = false
@@ -128,6 +132,7 @@ const portfolioSlice = createSlice({
 })
 
 export const {
+  setUser,
   showAddForm,
   showEditForm,
   hideForm,

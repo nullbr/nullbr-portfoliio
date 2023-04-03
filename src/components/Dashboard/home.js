@@ -1,17 +1,9 @@
-import { auth } from '../../firebase'
 import Form from './form'
 import List from './list'
-import { useEffect } from 'react'
-import { getPortfolioItems } from '../../features/portfolio/portfolioSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Home = () => {
   const { showForm } = useSelector((store) => store.portfolio)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(getPortfolioItems())
-  }, [dispatch])
 
   // const submitPortfolio = (e) => {
   //   e.preventDefault()
@@ -57,7 +49,7 @@ const Home = () => {
   return (
     <>
       <div className="list-container">
-        <List auth={auth} />
+        <List />
       </div>
       {showForm && (
         <div className="form-container">
