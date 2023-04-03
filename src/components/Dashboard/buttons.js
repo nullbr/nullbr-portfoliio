@@ -2,23 +2,28 @@ import {
   showAddForm,
   deleteAll,
   notModified,
+  toggleLoading,
 } from '../../features/portfolio/portfolioSlice'
-import { auth, createProject } from '../../firebase'
+import { auth, createProject, deleteProject } from '../../firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { signInWithGoogle } from '../../firebase'
 
 const Buttons = () => {
   const dispatch = useDispatch()
-  const { portfolioItems, isModified, user } = useSelector(
+  const { portfolioItems, isModified, user, deletedItems } = useSelector(
     (store) => store.portfolio
   )
 
   const saveChanges = () => {
+    dispatch(toggleLoading())
     portfolioItems.forEach((item) => {
-      if (createProject(item)) {
-        dispatch(notModified())
-      }
+      createProject(item)
     })
+    deletedItems.forEach((item) => {
+      deleteProject(item)
+    })
+    dispatch(notModified())
+    dispatch(toggleLoading())
   }
 
   return (

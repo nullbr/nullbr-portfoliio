@@ -44,6 +44,9 @@ const portfolioSlice = createSlice({
     setUser: (state, { payload }) => {
       state.user = payload
     },
+    toggleLoading: (state) => {
+      state.isLoading = !state.isLoading
+    },
     showAddForm: (state) => {
       state.showForm = true
       state.formData = {}
@@ -171,6 +174,7 @@ export const {
   addItem,
   deleteItem,
   deleteAll,
+  toggleLoading,
 } = portfolioSlice.actions
 
 export default portfolioSlice.reducer

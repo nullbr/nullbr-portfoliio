@@ -4,6 +4,7 @@ import {
   editItem,
   hideForm,
   sortPortfolio,
+  toggleLoading,
 } from '../../features/portfolio/portfolioSlice'
 import { storage } from '../../firebase'
 import { getDownloadURL, uploadBytes, ref } from 'firebase/storage'
@@ -26,7 +27,7 @@ const Form = () => {
       alert('Please upload an image')
       return
     } else if (imageFile.name !== '') {
-      console.log('upload')
+      dispatch(toggleLoading())
       uploadBytes(storageRef, imageFile).then(
         (snapshot) => {
           getDownloadURL(snapshot.ref).then(
@@ -43,8 +44,8 @@ const Form = () => {
           console.log(error)
         }
       )
+      dispatch(toggleLoading())
     } else {
-      console.log('no upload')
       addOrEdit(item)
     }
 

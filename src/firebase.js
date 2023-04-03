@@ -1,13 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { getStorage } from 'firebase/storage'
-import {
-  deleteDoc,
-  doc,
-  getFirestore,
-  setDoc,
-  updateDoc,
-} from 'firebase/firestore'
+import { deleteDoc, doc, getFirestore, setDoc } from 'firebase/firestore'
 
 const firebaseConfig = () => {
   if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
@@ -52,18 +46,10 @@ export const createProject = async (portfolio) => {
   }
 }
 
-export const updateProject = async (project) => {
-  try {
-    await updateDoc(doc(db, 'portfolio', project.id), project)
-  } catch (error) {
-    console.log(error)
-    return false
-  }
-}
-
 export const deleteProject = async (project) => {
   try {
     await deleteDoc(doc(db, 'portfolio', project.id))
+    return true
   } catch (error) {
     console.log(error)
     return false
