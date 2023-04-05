@@ -33,6 +33,7 @@ const Home = () => {
               strArray={t('home.hi').split('')}
               idx={11}
             />
+            <br className="mobile-none" />
             <AnimatedLetters
               letterClass={letterClass}
               strArray={t('home.im').split('')}

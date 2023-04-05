@@ -19,6 +19,10 @@
   }
 }
 
+.animated-span {
+  white-space: nowrap;
+}
+
 @for $i from 1 through 35 {
   .text-animate._#{$i} {
     animation-delay: #{$i / 10}s;
