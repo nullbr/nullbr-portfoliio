@@ -1,14 +1,14 @@
 :root {
   --main-color: #0093b9;
+  --white-color: #fff;
+  --gray-color: rgb(128, 128, 128);
 }
 
 :root.light {
   --secondary-color: #1d1d1d;
   --tertiary-color: #4d4d4e;
   --quaternary-color: #e9f1fa;
-  --white-color: #fff;
   --is-dark-theme: 0;
-  --gray-color: rgb(128, 128, 128);
   --background-color: #e9f1fa;
   --form-text: #1d1d1d;
   --form-bkg: #fff;
@@ -18,9 +18,7 @@
   --secondary-color: #e9f1fa;
   --tertiary-color: #fff;
   --quaternary-color: #000;
-  --white-color: #fff;
   --is-dark-theme: 1;
-  --gray-color: rgb(128, 128, 128);
   --background-color: #000;
   --form-text: #1d1d1d;
   --form-bkg: #e9f1fa;
@@ -44,7 +42,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right bottom;
-  background-size: max(350px, 60vw);
+  background-size: max(400px, 70vh);
 }
 
 h2,

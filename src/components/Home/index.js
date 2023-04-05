@@ -33,7 +33,6 @@ const Home = () => {
               strArray={t('home.hi').split('')}
               idx={11}
             />
-            <br />
             <AnimatedLetters
               letterClass={letterClass}
               strArray={t('home.im').split('')}
@@ -54,7 +53,6 @@ const Home = () => {
               strArray={'Full Stack '.split('')}
               idx={22}
             />
-            <br className="mobile-break" />
             <AnimatedLetters
               letterClass={letterClass}
               strArray={'Developer'.split('')}
