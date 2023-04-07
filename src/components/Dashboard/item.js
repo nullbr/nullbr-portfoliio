@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp } from '../../assets/icons/icons'
+import { ChevronDown, ChevronUp } from '../../../public/icons/icons'
 import {
   moveDown,
   moveUp,
