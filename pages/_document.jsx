@@ -41,10 +41,10 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <script
+        <Script
           type="text/javascript"
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-        ></script>
+        />
         <Script type="text/javascript">
           (function(){emailjs.init('cTwOxaU2kVqzmEP2i')})();
         </Script>
