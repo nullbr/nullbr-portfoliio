@@ -1,0 +1,65 @@
+:root {
+  --main-color: #0093b9;
+  --white-color: #fff;
+  --gray-color: rgb(128, 128, 128);
+}
+
+:root.light {
+  --secondary-color: #1d1d1d;
+  --tertiary-color: #4d4d4e;
+  --quaternary-color: #e9f1fa;
+  --is-dark-theme: 0;
+  --background-color: #e9f1fa;
+  --form-text: #1d1d1d;
+  --form-bkg: #fff;
+}
+
+:root.dark {
+  --secondary-color: #e9f1fa;
+  --tertiary-color: #fff;
+  --quaternary-color: #000;
+  --is-dark-theme: 1;
+  --background-color: #000;
+  --form-text: #1d1d1d;
+  --form-bkg: #e9f1fa;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font: 300 11px/1.4 'Helvetica Neue', sans-serif;
+  color: var(--tertiary-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--background-color);
+  overflow: visible;
+  display: block;
+
+  background-image: url('../public/images/background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right bottom;
+  background-size: max(400px, 70vh);
+}
+
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+}
+
+.dashboard {
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    overflow: visible;
+    background-position: top right;
+    background-image: url('../public/images/background-rotate.png');
+  }
+}

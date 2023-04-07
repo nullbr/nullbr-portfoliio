@@ -1,0 +1,145 @@
+.contact-form {
+  width: 100%;
+  margin-top: 20px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      margin-bottom: 10px;
+      opacity: 0;
+      overflow: hidden;
+      display: block;
+      clear: both;
+      position: relative;
+      animation: fadeInUp 2s 2s;
+      animation-fill-mode: forwards;
+    }
+
+    li.half {
+      width: 49%;
+      margin-left: 2%;
+      float: left;
+      clear: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .flat-button {
+    color: var(--main-color);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding: 8px 10px;
+    border: 1px solid var(--main-color);
+    float: left;
+    border-radius: 4px;
+    background: 0 0;
+    text-transform: uppercase;
+    float: right;
+    text-align: center;
+    margin-right: 10px;
+    animation: fadeInAnimation 1s 1.8s backwards;
+
+    &:hover {
+      background: var(--main-color);
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.map-wrap {
+  background: rgba(8, 253, 216, 0.1);
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  // padding-top: 35vh;
+  margin-left: 0;
+  position: absolute;
+  // overflow: hidden;
+}
+
+.leaflet-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: backInRight 1s 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.info-map {
+  position: absolute;
+  background: var(--background-color);
+  top: 50px;
+  right: 0;
+  z-index: 999999;
+  width: 267px;
+  padding: 10px 0 10px 30px;
+  opacity: 0;
+  animation: fadeIn 1s 1.5s;
+  animation-fill-mode: forwards;
+
+  a {
+    font-size: 16px;
+    text-decoration: none;
+
+    &:link {
+      color: var(--main-color);
+    }
+
+    &:hover {
+      color: var(--tertiary-color);
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-page {
+    .map-wrap {
+      float: none;
+      margin: 0;
+      margin-left: -20px;
+      width: 100vw;
+      height: 400px;
+      position: relative;
+      top: 20px;
+      right: 0;
+      box-sizing: border-box;
+      left: 0;
+    }
+
+    .info-map {
+      top: 0;
+      float: right;
+    }
+
+    .flat-button {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .stage-cube-cont {
+    width: 90% !important;
+    height: 400px;
+    float: none;
+    display: block;
+    margin: 0 auto 70px auto;
+    position: relative;
+    top: 20px;
+    right: 0;
+    box-sizing: border-box;
+    left: 0;
+    padding-top: 18%;
+  }
+}

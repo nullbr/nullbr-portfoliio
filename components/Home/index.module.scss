@@ -1,0 +1,165 @@
+.home-page {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 150px;
+
+  .text-zone {
+    position: relative;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: var(--secondary-color);
+    font-size: 56px;
+    line-height: 53px;
+    margin: 0;
+    font-family: 'Coolvetica';
+    font-weight: 400;
+
+    &:before {
+      content: '<h1>';
+      font-family: 'La Belle Aurore', cursive;
+      color: var(--main-color);
+      font-size: 18px;
+      position: absolute;
+      margin-top: -40px;
+      opacity: 0.6;
+    }
+
+    &:after {
+      content: '<h1/>';
+      font-family: 'La Belle Aurore', cursive;
+      color: var(--main-color);
+      font-size: 18px;
+      position: relative;
+      margin-top: 18px;
+      margin-left: 20px;
+      animation: fadeIn 1s 1.7s backwards;
+      opacity: 0.6;
+    }
+
+    img {
+      margin-left: 20px;
+      opacity: 0;
+      width: 32px;
+      height: auto;
+      animation: rotateIn 1s linear both;
+      animation-delay: 1.4s;
+    }
+  }
+
+  h2 {
+    color: var(--tertiary-color);
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 11px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    animation: fadeIn 1s 1.8s backwards;
+  }
+
+  .social-media {
+    bottom: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    a {
+      padding: 7px 0;
+      padding-right: 8px;
+      font-size: 20px;
+      line-height: 21px;
+      color: var(--tertiary-color);
+      animation: fadeIn 1s 1.8s backwards;
+
+      .anchor-icon {
+        color: var(--tertiary-color);
+      }
+
+      &:hover {
+        .anchor-icon {
+          color: var(--main-color);
+        }
+      }
+    }
+  }
+
+  .mobile-none {
+    display: inline;
+  }
+
+  .buttons {
+    display: flex;
+  }
+}
+
+.page {
+  min-height: auto !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .tags,
+  .home-page h1:before,
+  .home-page h1:after {
+    display: none;
+  }
+
+  .home-page .text-zone {
+    text-align: center;
+  }
+
+  .home-page {
+    position: absolute !important;
+    height: 100% !important;
+    width: 100%;
+    padding: 0;
+    top: 0 !important;
+    right: 0;
+    align-items: center;
+
+    .text-zone {
+      width: 100%;
+      padding: 5px;
+      padding-bottom: 65px;
+    }
+  }
+  .container.home-page {
+    flex-direction: column-reverse;
+    gap: 10px;
+    min-height: 680px;
+  }
+
+  .buttons {
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+
+    .resume-btn,
+    .contact-btn {
+      width: 90%;
+    }
+  }
+
+  .home-page .mobile-none {
+    display: none;
+  }
+
+  @media screen and (max-width: 500px) {
+    .home-page h1 {
+      font-size: 40px;
+      line-height: 43px;
+      img {
+        height: 34px;
+        width: 25px;
+        margin-bottom: -3px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
