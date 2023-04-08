@@ -1,7 +1,7 @@
-import './index.scss'
+import './index.module.scss'
 import { useState } from 'react'
-import LogoB from '../../../public/images/logo-s.png'
-import LogoSubtitle from '../../../public/images/logo_sub.png'
+import LogoB from '../../public/images/logo-s.png'
+import LogoSubtitle from '../../public/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHome,
