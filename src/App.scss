@@ -5,23 +5,23 @@ $primary-color: #0093b9;
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('../public/fonts/helvetica-neu.ttf') format('ttf');
+  src: url('./assets/fonts/helvetica-neu.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'La Belle Aurore';
-  src: url('../public/fonts/LaBelleAurore.woff2') format('woff2'),
-    url('../public/fonts/LaBelleAurore.woff') format('woff');
+  src: url('./assets/fonts/LaBelleAurore.woff2') format('woff2'),
+    url('./assets/fonts/LaBelleAurore.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Coolvetica';
-  src: url('../public/fonts/CoolveticaRg-Regular.woff2') format('woff2'),
-    url('../public/fonts/CoolveticaRg-Regular.woff') format('woff');
+  src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2'),
+    url('./assets/fonts/CoolveticaRg-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

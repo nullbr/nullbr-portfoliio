@@ -38,7 +38,7 @@ body {
   overflow: visible;
   display: block;
 
-  background-image: url('../public/images/background.png');
+  background-image: url('./assets/images/background.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right bottom;
@@ -60,6 +60,6 @@ h4 {
   body {
     overflow: visible;
     background-position: top right;
-    background-image: url('../public/images/background-rotate.png');
+    background-image: url('./assets/images/background-rotate.png');
   }
 }
