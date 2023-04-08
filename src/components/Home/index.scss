@@ -89,10 +89,6 @@
     }
   }
 
-  .mobile-none {
-    display: inline;
-  }
-
   .buttons {
     display: flex;
   }
@@ -142,12 +138,8 @@
 
     .resume-btn,
     .contact-btn {
-      width: 90%;
+      width: 100%;
     }
-  }
-
-  .home-page .mobile-none {
-    display: none;
   }
 
   @media screen and (max-width: 500px) {
